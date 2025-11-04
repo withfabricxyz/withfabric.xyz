@@ -1,0 +1,12 @@
+.post-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.post-content {
+  max-width: 440px;
+  margin: 0 auto;
+}

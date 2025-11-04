@@ -1,0 +1,290 @@
+:root {
+  /* https://www.figma.com/design/BImNrOVHWxAtwSjoQNDUPO/Fabric-Design-Library?node-id=21-18&p=f&vars=1&m=dev */
+  --font-family-default: "ABC Diatype Variable", sans-serif;
+
+  --color-black-100: #000;
+  --color-black-85: rgba(0, 0, 0, 0.85);
+  --color-black-72: rgba(0, 0, 0, 0.72);
+  --color-black-48: rgba(0, 0, 0, 0.48);
+  --color-black-42: rgba(0, 0, 0, 0.42);
+  --color-black-35: rgba(0, 0, 0, 0.35);
+  --color-black-12: rgba(0, 0, 0, 0.12);
+  --color-black-10: rgba(0, 0, 0, 0.1);
+  --color-black-7: rgba(0, 0, 0, 0.07);
+  --color-black-5: rgba(0, 0, 0, 0.05);
+  --color-black-3: rgba(0, 0, 0, 0.03);
+  --color-black-2: rgba(0, 0, 0, 0.02);
+
+  --color-gray-100: #f9f9f9;
+  --color-mauve-dark-4: #2b292d;
+  --color-mauve-dark-2: #1a191b;
+
+  --color-white-100: #fff;
+  --color-white-95: rgba(255, 255, 255, 0.95);
+  --color-white-87: rgba(255, 255, 255, 0.87);
+  --color-white-82: rgba(255, 255, 255, 0.82);
+  --color-white-70: rgba(255, 255, 255, 0.7);
+  --color-white-64: rgba(255, 255, 255, 0.64);
+  --color-white-56: rgba(255, 255, 255, 0.56);
+  --color-white-48: rgba(255, 255, 255, 0.48);
+  --color-white-15: rgba(255, 255, 255, 0.15);
+  --color-white-12: rgba(255, 255, 255, 0.12);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-6: rgba(255, 255, 255, 0.06);
+  --color-white-3: rgba(255, 255, 255, 0.03);
+
+  --color-green-110: #067a3e;
+  --color-green-100: #117d45;
+  --color-green-80: #17ab5e;
+  --color-green-40: #88d5ae;
+  --color-green-20: #d1eedf;
+  --color-green-10: #ecf5f0;
+  --color-green-5: #f3f8f6;
+
+  --color-yellow-110: #e57300;
+  --color-yellow-105: #f28e02;
+  --color-yellow-100: #fba808;
+  --color-yellow-50: #fcc965;
+  --color-yellow-25: #fee5b5;
+  --color-yellow-20: #feeece;
+  --color-yellow-5: #fef9f5;
+
+  --color-blue-110: #2e27e4;
+  --color-blue-100: #332bfd;
+  --color-blue-95: #4c46e2;
+  --color-blue-90: #6a65f5;
+  --color-blue-50: #a19efe;
+  --color-blue-20: #d6d5ff;
+  --color-blue-15: #e7e6ff;
+  --color-blue-5: #f9f9ff;
+
+  --color-red-115: #e90249;
+  --color-red-110: #e10a4c;
+  --color-red-105: #ed0a50;
+  --color-red-100: #fa0b54;
+  --color-red-90: #fb3c76;
+  --color-red-50: #fc84a9;
+  --color-red-20: #fecedd;
+  --color-red-10: #ffebf1;
+  --color-red-5: #fff5f8;
+
+  --color-acid-160: #e3fdc8;
+  --color-acid-150: #d3fda8;
+  --color-acid-130: #7ce26e;
+  --color-acid-125: #a5fa4d;
+  --color-acid-120: #64df53;
+  --color-acid-115: #91f925;
+  --color-acid-110: #37d322;
+  --color-acid-100: #38c625;
+  --color-acid-90: #37b627;
+  --color-acid-70: #34972c;
+  --color-acid-30: #31553e;
+  --color-acid-25: #2d5037;
+  --color-acid-10: #222e2f;
+
+  --color-ruby-120: #ff5c66;
+  --color-ruby-110: #ff4d58;
+  --color-ruby-105: #ff3369;
+  --color-ruby-100: #fa2e3c;
+  --color-ruby-95: #ff2938;
+  --color-ruby-90: #ff0f20;
+  --color-ruby-70: #d1192a;
+  --color-ruby-30: #70234a;
+  --color-ruby-25: #662e43;
+  --color-ruby-10: #3a2739;
+
+  --color-cobalt-130: #6374fa;
+  --color-cobalt-125: #4362fe;
+  --color-cobalt-120: #4a5df9;
+  --color-cobalt-110: #3341ff;
+  --color-cobalt-100: #2937ff;
+  --color-cobalt-40: #2e359e;
+  --color-cobalt-25: #302e74;
+  --color-cobalt-15: #2e3059;
+  --color-cobalt-10: #242547;
+
+  --color-gold-100: #f5cc00;
+  --color-gold-90: #e1bc06;
+  --color-gold-30: #6c5333;
+  --color-gold-25: #615635;
+  --color-gold-20: #544b32;
+  --color-gold-5: #2f2c30;
+
+  --color-nyx-100: #2f2f46;
+  --color-nyx-95: #2d2d43;
+  --color-nyx-90: #29293d;
+  --color-nyx-80: #1f1f2e;
+
+  /* ===== Fabric Brand Colors ===== */
+  --color-fabric-purple: #80f;
+  --color-fabric-acid: #91f925;
+  --color-fabric-pink: #ff57e6;
+  --color-fabric-orange: #f1a004;
+  --color-fabric-light-blue: #0bc1fa;
+
+  /* ===== Type Colors ===== */
+  --color-type-primary-100: var(--color-black-100);
+  --color-type-primary-90: var(--color-black-85);
+  --color-type-primary-80: var(--color-black-72);
+  --color-type-secondary-100: var(--color-black-48);
+  --color-type-secondary-90: var(--color-black-42);
+  --color-type-tertiary: var(--color-black-35);
+  --color-type-disabled: var(--color-black-10);
+  --color-type-inverse-primary: var(--color-white-100);
+  --color-type-inverse-secondary: var(--color-white-70);
+  --color-type-inverse-disabled: var(--color-white-100);
+  --color-type-success: var(--color-green-100);
+  --color-type-info: var(--color-blue-100);
+  --color-type-danger: var(--color-red-100);
+
+  /* ===== Surface Colors ===== */
+  --color-surface-base: var(--color-gray-100);
+  --color-surface-high: var(--color-white-100);
+  --color-surface-low: var(--color-black-10);
+  --color-surface-sub: var(--color-black-3);
+  --color-surface-min: var(--color-black-2);
+  --color-surface-focus: var(--color-black-48);
+  --color-surface-disabled: var(--color-black-10);
+  --color-surface-scrim: var(--color-black-42);
+  --color-surface-glass: var(--color-white-3);
+
+  /* ===== easings ===== */
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --ease-in-ios: cubic-bezier(0.42, 0, 1, 1);
+  --ease-out-ios: cubic-bezier(0, 0, 0.58, 1);
+  --ease-in-out-ios: cubic-bezier(0.42, 0, 0.58, 1);
+  --ease-default-ios: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* ===== z-indexes ===== */
+  --z-index-layer-background: -1;
+  --z-index-layer-base: 0;
+  --z-index-layer-navigation: 5;
+  --z-index-layer-dialog-scrim: 9;
+  --z-index-layer-dialog: 10;
+  --z-index-layer-bottom-sheet-scrim: 14;
+  --z-index-layer-bottom-sheet: 15;
+  --z-index-layer-toast: 20;
+  --z-index-layer-tooltip: 25;
+
+  /* ===== spacing ===== */
+  /* default to 2px increments */
+  --spacing: 0.125rem;
+
+  /* ===== breakpoints ===== */
+  --breakpoint-3xl: 120rem; /* 1920px */
+  --breakpoint-4xl: 144rem; /* 2304px */
+}
+
+:root.dark {
+  /* ===== Type Colors ===== */
+  --color-type-primary-100: var(--color-white-100);
+  --color-type-primary-90: var(--color-white-95);
+  --color-type-primary-80: var(--color-white-87);
+  --color-type-secondary-100: var(--color-white-70);
+  --color-type-secondary-90: var(--color-white-56);
+  --color-type-tertiary: var(--color-white-48);
+  --color-type-disabled: var(--color-white-15);
+  --color-type-inverse-primary: var(--color-nyx-80);
+  --color-type-inverse-secondary: var(--color-black-48);
+  --color-type-inverse-disabled: var(--color-nyx-90);
+  --color-type-success: var(--color-acid-110);
+  --color-type-info: var(--color-cobalt-130);
+  --color-type-danger: var(--color-ruby-110);
+
+  /* ===== Surface Colors ===== */
+  --color-surface-base: var(--color-nyx-90);
+  --color-surface-high: var(--color-nyx-100);
+  --color-surface-low: var(--color-white-12);
+  --color-surface-sub: var(--color-white-6);
+  --color-surface-min: var(--color-white-3);
+  --color-surface-focus: var(--color-white-56);
+  --color-surface-disabled: var(--color-white-15);
+  --color-surface-scrim: var(--color-black-12);
+  --color-surface-glass: var(--color-black-2);
+}
+
+@layer utilities {
+  .glass {
+    /*
+    * We use this effect primarily on layered elements that are typically position:fixed|absolute.
+    *
+    * However, a filter value other than `none` on a fixed or absolute element will create a new "containing block"
+    * which changes the stacking context, ie: children of the filtered element are now positioned relative to the
+    * filtered element instead of the viewport.
+    *
+    * https://stackoverflow.com/questions/52937708/why-does-applying-a-css-filter-on-the-parent-break-the-child-positioning
+    *
+    * A workaround is to apply to the filter to a pseudo-element instead.
+    */
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(1rem);
+      background-color: var(--color-white-3);
+    }
+
+    /* We don't want pointer events on the glass effect since it's a pseudo element, but since glass elements can have
+    * children that need pointer events, we don't want to remove pointer events all of the children.
+    */
+    pointer-events: none;
+
+    /* :has(:not(.pointer-events-none)) {
+      pointer-events: all;
+    } */
+  }
+
+  /* TODO: figure out how to fade out the glass effect to transparent via a gradient or mask */
+  .glass-fade {
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background-image: linear-gradient(
+        to bottom,
+        var(--color-white-100) 0%,
+        transparent 100%
+      ); */
+      /* -webkit-mask: -webkit-gradient(
+        to bottom,
+        from(var(--color-white-100)),
+        color-stop(0.5, var(--color-white-100)),
+        to(transparent)
+      ); */
+    }
+  }
+}
