@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 7.5rem auto;
   h1, h2, h3, h4, h5, p, ul, ol, li {
     color: var(--color-white-100);
     -webkit-font-smoothing: antialiased;
@@ -35,8 +35,13 @@
 
 .post-content {
   max-width: 34rem;
-  margin: 7.5rem auto;
+  margin: 5rem auto;
   img {
     border-radius: 5px;
+    margin: 20px 0;
   }
+}
+
+.date {
+  color: var(--color-white-70) !important;
 }
