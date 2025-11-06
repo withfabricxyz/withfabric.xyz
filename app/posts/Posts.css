@@ -66,3 +66,14 @@ ol, ul, li {
 ul {
   padding-left: 27px;
 }
+
+.block {
+  font-weight: 400;
+  margin: 16px 0 16px -40px;
+  padding: 0;
+  display: block;
+}
+
+iframe {
+  border-radius: 5px;
+}
