@@ -7,75 +7,73 @@ import Image from "next/image";
 
 # Subscription Token Protocol – V2
 
-## Permissionlessly pool capital and verifiably share upside
+#### The newest version of the protocol that powers Hypersub.
 
-April 25, 2023
+<p className="date">June 21, 2024</p>
 
-<Image src="/images/flow.gif" alt="Fabric Crowdfinancing Protocol" width={440} height={248} />
+<Image src="/images/stpv2-01.jpg" alt="Subscription Token Protocol – V2" width={544} height={157} />
 
-The Fabric crowdfinancing protocol helps values-aligned communities pool capital in order to achieve shared goals.
+Since our launch in November, STP—the protocol powering Hypersub—has been used to deploy 600+ subscription contracts and move over 168 ETH (~$600,000) in funds. Hundreds of creators and businesses use Hypersub to run everything from sustainable art practices to onchain SaaS startups and more. Over the last 6 months, we’ve worked closely with these creators to better understand how STP should evolve, working hard to design the most powerful and flexible onchain payment protocol.
 
-Here's how it works:
-1. A creator deploys a crowdfinancing contract onchain.
-2. Contributors deposit funds into the contract.
-3. If the goal is met, then the recipient can withdraw the pooled funds from the contract, else contributors can withdraw their deposits.
+Today, we’re excited to announce the next major iteration of STP. This next evolution of our protocol enables maximum flexibility for Hypersub creators and opens up expansive possibilities for building new businesses and tools that use onchain payments and data.
 
-Optionally:
-1. Yield generated from deployed capital can be deposited back into the contract by the recipient.
-2. Contributors can then withdraw a percentage of this yield, in proportion to their initial contribution.
+## Why STP?
 
-The protocol is a non-upgradable, EVM-compatible smart contract that can be permissionlessly used to pool capital and verifiably share upside. It lives at the intersection of a crowdfunding project, escrow account, and cap table.
+Subscription-based business models are clearly advantageous for a variety of businesses, and have become the norm for creative projects and software businesses alike. 
 
-Such is the combinatorial power of crypto-economic software.
+Until last year, launching an onchain subscription was difficult, as NFTs and ERC20s had no concept of time embedded within them. Instead, they offered one-time, discrete value transfer between buyers and sellers.
 
-### Protocol
-#### Contract
-Crowdfinancing contracts are the atomic unit of the protocol. They are what creators deploy onchain, contributors deposit funds into, and recipients withdraw from. They are also used to custody and distribute yield.
+Token allowances and streaming escrow contracts are one solution to this problem, but they are complex and difficult to use.
 
-Each crowdfinancing contract has the following parameters:
-- Goal
-	A goal consists of a minimum and maximum funding target. The contract will not allow contributions above the maximum goal. The recipient can only withdraw pooled funds if the minimum goal is met.
-- Token
-	Goals are denominated in ETH or ERC-20 tokens, such as USDC or DAI.
-- Duration
-	The campaign duration is encoded in a start time and an end time; the contract will only accept contributions between those times. At the end time, the contract compares the funds pooled to the minimum goal to determine if the campaign was successful or failed.
-- Recipient
-	If the campaign is successful, the recipient can withdraw the pooled funds. The recipient can be any address, whether an individual wallet, a multisig, or another smart contract such as a DAO or a DeFi protocol. The recipient can deposit any yield generated back into the crowdfinancing contract, for withdrawal by the contributors.
+We made STP to simplify creating and managing recurring revenue onchain. Hypersub is a client focused on enabling creators and businesses to use the protocol in an easy, accessible way.
 
-#### Creator
-Anyone can deploy a crowdfinancing contract: founders, community builders, artists, DAOs, gaming guilds, freelance collectives, schools, co-ops, nonprofits, neighborhood and homeowners associations, for profit companies, etc.
+We believe STP can enable sustainable revenue generation while unlocking the interoperability and power of building onchain.
 
-#### Contributor
-Deposits can be made into the contract by any address, be it an individual wallet, multisig, DAO, or other protocol. If the campaign fails, contributors can withdraw their deposits. If the campaign is successful, and the recipient later deposits yield into the contract, the contributors can withdraw that yield in proportion to their contributions.
+## What’s new in STPv2?
 
-#### Fees
-The protocol can collect three types of fees:
+### Tiers
 
-1. Deployment: a flat fee in order to deploy a crowdfinancing contract onchain.
-2. Capital: a percentage of the total funds raised.
-3. Yield: a percentage of the returns generated from deployed capital.
+The primary development of STPv2 is Tiers, which can be understood as the ability for creators to provide different offerings at different price-points. 
 
-All fees are currently set to zero. In the future, if we enable fees, they will accrue to the Fabric protocol treasury.
+For example, a subscriber to the $5 tier might only get access to Bob’s newsletter, while a subscriber at the $10 tier gets access to Bob’s newsletter and his private group chat. Creators can create any number of tiers at any number of price points.
 
-### Risks
-Though the contract has been [audited by Quantstamp](https://certificate.quantstamp.com/full/fabric-crowd-financing-2/b7c2f191-3a07-45b9-8bad-02e9827d19fd/index.html) and thoroughly tested prior to deploying, using the protocol is not without risk.
+Tiers aren’t always divided cleanly into low, middle, and high priced offers. Sometimes, creators just want to create a specific offer for a specific group of people, independently of the other tiers. For example, Alice might want to offer a discount to subscribers of Bob’s Hypersub or to holders of a particular token. Creators can create custom pricing tied to any token or balance data.
 
-#### Creators
-Fabric does not (and can not) control who uses the protocol. It is *non-upgradable, decentralized, and permissionless*, which means that in addition to the types of creators mentioned above, scammers, spammers, fraudsters, charlatans, evildoers, and other economic agents of low moral character can also use it. Do your own research and verify both the creator and recipient address prior to contributing.
+The flexibility of Tiers enables all sorts of other features, including free/pay-what-you-want pricing, token-gated subscriptions, bundles, discounts, non-transferrable tiers, and more. 
 
-#### Recipients
-Just like creators, recipients can be any address, and therefore not necessarily a known or trusted actor. Do your own research and verify the recipient address prior to contributing.
+With these upgrades, we’ve made it possible to customize almost every aspect of your contract. Here’s a taste of the settings you can now play with:
 
-#### Yield
-For yield generated offchain, there is currently no mechanism by which to enforce deposits back into the contract. In this case, contributors are dependent on the recipient—and whatever out-of-band means may exist—to follow through on their promise of returns.
+- Updateable Pricing: pricing of a subscription contract can now be updated for any tier at any time.
+- Inactive Status: for supply-capped subscriptions, you can now mark particular subscribers “inactive.” This allows them to maintain possession of their token while opening up a spot for a new subscriber to join.
+- Subscription Duration: creators can now set minimum and maximum subscription time, helping to avoid situations where someone subscribes for 10 years to a 6 month project or allowing creators to set a minimum level of commitment for subscribers.
+- Max Mintable Time: contracts can also cap the amount of time that any individual subscriber can mint, accommodating short-term projects and experiments.
+- Initial Mint Price: STP contracts can now include an “initiation fee,” which is an up-front fee required to be paid in order to mint any time at all.
 
-#### Compliance
-Know your rights. Seek counsel from a qualified attorney who can advise on relevant legal and regulatory restrictions in your area. Economic freedom is not yet evenly distributed.
+### Subscriber Rewards
 
-#### Clients
-The first client for using the Fabric protocol is available at https://crowdfi.withfabric.xyz. But anyone can launch a client for interacting with the protocol. Do your own research and verify that whatever interface you use has been developed by a reputable source.
+One of the most powerful, unique features of STP is Subscriber Rewards, which allow creators to share a percentage of their revenue with subscribers. Our philosophy has always been that your earliest subscribers should get rewarded more than later subscribers, incentivizing support for Hypersub creators from the earliest days.
 
-### The World Is Yours
-People have been pooling capital and sharing upside for centuries. The Fabric crowdfinancing protocol codifies this basic human impulse into a permissionless, decentralized smart contract that anyone, anywhere in the world can use. No gatekeepers, no middle-men, no masters. 
+In STPv2, we’ve completely reworked Subscriber Rewards to allow for more flexibility and creativity over how you reward your supporters. Everything about Subscriber Rewards is now customizable, including which tiers are contributing to reward pools, which tiers are receiving the rewards, how much more of the rewards early subscribers receive (if at all), and much more.
+
+Here are a few examples of what’s possible:
+
+- Multi-tier Contributions: with STPv2, funds can flow from any tier into a single Subscriber Rewards pool. You can then choose whether to share rewards with members of every tier or just the top tier of subscribers as a special perk.
+- Adjustable Reward Curves: maybe you want day one subscribers to get 90% of the rewards. Maybe you want all of your subscribers to share rewards equally. The rewards curve is now adjustable to suit your community and the culture you want to foster.
+- External Contributions: now, anyone can send funds to the rewards pool. These funds will be automatically split between subscribers according to the settings you’ve customized. This is a great way to share external revenue sources with your community, so they can share in the upside of even more of your work.
+
+### Access
+
+STPv2 also supports access controls for multiple managers. This enables two things:
+
+1. Team-managed contracts. With STPv2, contracts can be managed by multiple people, with the ability to assign different roles to each manager. This means certain members of your team might be able to create a new Drop, but won’t necessarily have the ability to remove funds from the contract
+2. App-managed contracts. Role management also enables smart contracts and apps to take action on a creator’s behalf (with permission). For example, some might create a tool to withdraw funds from a contract every time the balance hits a certain level.
+
+## What's Next?
+
+We couldn’t be more excited to see the creativity and experiences that STPv2 unlocks. 
+
+While these features are available in the contract today, the Fabric team will be rolling out client-level support for Hypersub users throughout the summer. 
+
+Stay tuned for updates each week as we ship accessible ways for creators to take advantage of this powerful protocol.
 
 The world is yours.
