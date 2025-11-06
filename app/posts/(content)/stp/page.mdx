@@ -7,75 +7,84 @@ import Image from "next/image";
 
 # Announcing the Subscription Token Protocol
 
-## Permissionlessly pool capital and verifiably share upside
+#### An extension of the ERC-721 NFT standard, with a temporal dimension and economic incentives.
 
-April 25, 2023
+<p className="date">October 31, 2023</p>
 
-<Image src="/images/flow.gif" alt="Fabric Crowdfinancing Protocol" width={440} height={248} />
+<Image src="/images/stp-01.jpg" alt="Announcing the Subscription Token Protocol" width={544} height={157} />
 
-The Fabric crowdfinancing protocol helps values-aligned communities pool capital in order to achieve shared goals.
+## How It Works
+1. A creator or business specifies a period of time (eg 1 month) and a price per period (eg 10 USDC) then deploys their subscription NFT contract onchain.
+2. Users mint the subscription NFT by purchasing a desired amount of time (eg 6 months for 60 USDC). This grants them access to whatever apps, content, and experiences have been gated on the subscription NFT
+3. This access remains in effect until the user’s time expires (eg after 6 months), at which point, access is denied, unless the user mints additional subscription time.
 
-Here's how it works:
-1. A creator deploys a crowdfinancing contract onchain.
-2. Contributors deposit funds into the contract.
-3. If the goal is met, then the recipient can withdraw the pooled funds from the contract, else contributors can withdraw their deposits.
+The protocol is a non-upgradable, EVM-compatible smart contract that can be permissionlessly used to gate access to apps, services, content, and experiences. Time-bound subscription NFTs generate recurring revenue for businesses and creators, and are a simple, convenient access method for end-users.
 
-Optionally:
-1. Yield generated from deployed capital can be deposited back into the contract by the recipient.
-2. Contributors can then withdraw a percentage of this yield, in proportion to their initial contribution.
+### Onchain Subscriber Rewards
 
-The protocol is a non-upgradable, EVM-compatible smart contract that can be permissionlessly used to pool capital and verifiably share upside. It lives at the intersection of a crowdfunding project, escrow account, and cap table.
+The protocol has a mechanism, “Subscriber Rewards”, for the contract deployer to allocate a portion of recurring revenue back to subscribers, to incentivize early adoption, long-term subscriptions, and subscriber retention.
 
-Such is the combinatorial power of crypto-economic software.
+If the contract owner enables this mechanism, the specified proportion of each subscription mint payment goes into the subscriber reward pool. As more users subscribe, the pool grows. Each subscriber is allocated tokens signifying a share of the reward pool, and that share is larger the earlier the user subscribes, and the longer they subscribe for.
 
-### Protocol
-#### Contract
-Crowdfinancing contracts are the atomic unit of the protocol. They are what creators deploy onchain, contributors deposit funds into, and recipients withdraw from. They are also used to custody and distribute yield.
+A user must have an active subscription in order to withdraw their rewards. If their subscription lapses and they do not resubscribe, their reward allocation can be slashed. (There’s a grace period before slashing can happen, of half the subscription time. Eg a 6 month subscription has a 3 month grace period.) <a href="https://docs.withfabric.xyz/stp/v1/rewards">Learn more</a>
 
-Each crowdfinancing contract has the following parameters:
-- Goal
-	A goal consists of a minimum and maximum funding target. The contract will not allow contributions above the maximum goal. The recipient can only withdraw pooled funds if the minimum goal is met.
-- Token
-	Goals are denominated in ETH or ERC-20 tokens, such as USDC or DAI.
-- Duration
-	The campaign duration is encoded in a start time and an end time; the contract will only accept contributions between those times. At the end time, the contract compares the funds pooled to the minimum goal to determine if the campaign was successful or failed.
-- Recipient
-	If the campaign is successful, the recipient can withdraw the pooled funds. The recipient can be any address, whether an individual wallet, a multisig, or another smart contract such as a DAO or a DeFi protocol. The recipient can deposit any yield generated back into the crowdfinancing contract, for withdrawal by the contributors.
+### Onchain Referral Rewards
 
-#### Creator
-Anyone can deploy a crowdfinancing contract: founders, community builders, artists, DAOs, gaming guilds, freelance collectives, schools, co-ops, nonprofits, neighborhood and homeowners associations, for profit companies, etc.
+The protocol has a mechanism, “Referral Rewards”, for the contract deployer to allocate a percentage of subscription revenue to those who refer subscribers, in order to incentivize organic growth and distribution.
 
-#### Contributor
-Deposits can be made into the contract by any address, be it an individual wallet, multisig, DAO, or other protocol. If the campaign fails, contributors can withdraw their deposits. If the campaign is successful, and the recipient later deposits yield into the contract, the contributors can withdraw that yield in proportion to their contributions.
+For example:
+1. Alice (the contract deployer) specifies a 10% referral reward for her subscription NFT.
+2. Bob (a referrer) generates a unique referral URL for Alice’s subscription and shares it with others.
+3. Charlie (a subscriber) purchases a 100 USDC subscription using Bob’s link.
+4. Alice receives 90 USDC.
+5. Bob receives 10 USDC.
 
-#### Fees
-The protocol can collect three types of fees:
+Referral payments are made onchain and at the time of each subscription mint, so no withdrawal is required. <a href="https://docs.withfabric.xyz/stp/v1/referrals">Learn more</a>
 
-1. Deployment: a flat fee in order to deploy a crowdfinancing contract onchain.
-2. Capital: a percentage of the total funds raised.
-3. Yield: a percentage of the returns generated from deployed capital.
+### Fees
 
-All fees are currently set to zero. In the future, if we enable fees, they will accrue to the Fabric protocol treasury.
+The protocol takes a 4% fee on all subscriptions. <a href="https://docs.withfabric.xyz/stp/v1/fees">Learn more</a>
 
-### Risks
-Though the contract has been [audited by Quantstamp](https://certificate.quantstamp.com/full/fabric-crowd-financing-2/b7c2f191-3a07-45b9-8bad-02e9827d19fd/index.html) and thoroughly tested prior to deploying, using the protocol is not without risk.
+### Onchain Partner Rewards
 
-#### Creators
-Fabric does not (and can not) control who uses the protocol. It is *non-upgradable, decentralized, and permissionless*, which means that in addition to the types of creators mentioned above, scammers, spammers, fraudsters, charlatans, evildoers, and other economic agents of low moral character can also use it. Do your own research and verify both the creator and recipient address prior to contributing.
+Any entity that facilitates the deployment of subscription NFT contracts is eligible to receive 50% of the protocol fee.
 
-#### Recipients
-Just like creators, recipients can be any address, and therefore not necessarily a known or trusted actor. Do your own research and verify the recipient address prior to contributing.
+Eg: If Alice uses app.xyz to deploy her subscription NFT contract and it generates 100,000 USDC in annual recurring revenue, then the protocol will receive 2,000 USDC and app.xyz will receive 2,000 USDC annually.
 
-#### Yield
-For yield generated offchain, there is currently no mechanism by which to enforce deposits back into the contract. In this case, contributors are dependent on the recipient—and whatever out-of-band means may exist—to follow through on their promise of returns.
+Protocol partner rewards are all onchain and in perpetuity.
 
-#### Compliance
-Know your rights. Seek counsel from a qualified attorney who can advise on relevant legal and regulatory restrictions in your area. Economic freedom is not yet evenly distributed.
+### Abstractability
 
-#### Clients
-The first client for using the Fabric protocol is available at https://crowdfi.withfabric.xyz. But anyone can launch a client for interacting with the protocol. Do your own research and verify that whatever interface you use has been developed by a reputable source.
+STP contains a function that enables any account to purchase a subscription on behalf of any other account. This facilitates, in particular, credit card payments.
 
-### The World Is Yours
-People have been pooling capital and sharing upside for centuries. The Fabric crowdfinancing protocol codifies this basic human impulse into a permissionless, decentralized smart contract that anyone, anywhere in the world can use. No gatekeepers, no middle-men, no masters. 
+Eg: On app.xyz, Charlie subscribes to Alice’s contract, which costs 10 USDC per month. He gives his credit card info to app.xyz, which then charges Charlie’s card 10 USD each month, and in turn, mints 10 USDC worth of subscription NFT time on his behalf.
+
+With smart contract wallets, MPC wallets, EIP-4337, and other novel forms of abstraction, it’s even possible for Charlie to subscribe without ever knowing he’s using crypto.
+
+### Additional Features
+<a href="https://docs.withfabric.xyz/stp/v1/grants">Grants</a>: the owner of the NFT contract can issue onchain grants simply by specifying an address and amount of time they wish to grant.
+
+<a href="https://docs.withfabric.xyz/stp/v1/refunds">Refunds</a>: the owner of the NFT contract can issue onchain refunds simply by specifying an address and amount of subscription-time payment they wish to refund.
+
+<a href="https://docs.withfabric.xyz/stp/v1/advanced#adjusting-supply-cap">Max Supply</a>: the owner of the NFT contract can specify an onchain supply cap, thus limiting the number of subscriptions available to mint.
+
+<a href="https://docs.withfabric.xyz/stp/v1/advanced#pausing-and-unpausing">Pause</a>: the owner of the NFT contract can pause subscriptions at any time.
+
+<a href="https://docs.withfabric.xyz/stp/v1/advanced#transfering-ownership">Ownership Transfer</a>: the owner of the NFT contract can transfer ownership to any valid address.
+
+<a href="https://docs.withfabric.xyz/stp/v1/withdraws#withdrawing-to-another-account">Revenue Recipient</a>: the owner of the NFT contract can specify any valid address as the recipient of their subscription revenue, for example a splits contract, vault, multisig safe, or DAO.
+
+## Use Cases
+1. Creators: onchain memberships
+2. Businesses: onchain SaaS payments
+
+## Why?
+NFTs and ERC-20 tokens provide a one-time, discrete value transfer between buyers and sellers. However, when these are used as payment for continuous work, incentives become misaligned: a one-time payment for lifetime access is not a sustainable business model.
+
+Token allowances and streaming escrow contracts are one solution to this problem. But they are complex, fragile, and hard to use.
+
+We made STP to easily, efficiently, and robustly create and manage recurring revenue onchain.
+
+Creating and collecting NFTs has emerged as a robust end-user behavior with a well-understood mental model. Adding a temporal dimension to NFTs, as well as incentives for distribution, adoption, growth, and retention, expands the potential use and utility of these crypto-primitives.
 
 The world is yours.
