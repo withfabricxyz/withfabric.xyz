@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Spark from "../../components/Spark";
 import "./About.css";
 
@@ -7,8 +8,10 @@ export const metadata = {
 
 export default function AboutPage({ children }) {
   return (
-    <div className="about-page">
+  <div className="about-page">
+    <Link href="/">
       <Spark />
+    </Link>
       <div className="about-content body--copy">
         <p>Fabric was founded in 2022, with seed funding from Polychain Capital, Eniac Ventures, Mischief, and Reverie. The Fabric team is Jonny Mack, Dan Simpson, and Chris Douglas.</p>
 
