@@ -4,12 +4,12 @@ import "./Homepage.css";
 
 export default function Homepage() {
   return (
-    <div className="homepage-content">
-      <Spark />
-
-      <h1 className="body--copy">Best-in-class swap routing launching 2026.</h1>
-
-      <Footer />
+    <div className="page">
+      <img className="market-network"src="/images/market-network.svg" alt="" />
+      <div className="homepage-content">
+        <Footer />
+        <img className="fabric"src="/images/fabric.svg" alt="" />
+      </div>
     </div>
   )
 }
