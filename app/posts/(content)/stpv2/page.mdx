@@ -1,0 +1,79 @@
+---
+title: "Subscription Token Protocol – V2"
+headerImage: /images/stpv2.jpg
+---
+
+import Image from "next/image";
+
+# Subscription Token Protocol – V2
+
+#### The newest version of the protocol that powers Hypersub.
+
+<p className="date">June 21, 2024</p>
+
+<Image src="/images/stpv2-01.jpg" alt="Subscription Token Protocol – V2" width={544} height={157} />
+
+Since our launch in November, STP—the protocol powering Hypersub—has been used to deploy 600+ subscription contracts and move over 168 ETH (~$600,000) in funds. Hundreds of creators and businesses use Hypersub to run everything from sustainable art practices to onchain SaaS startups and more. Over the last 6 months, we’ve worked closely with these creators to better understand how STP should evolve, working hard to design the most powerful and flexible onchain payment protocol.
+
+Today, we’re excited to announce the next major iteration of STP. This next evolution of our protocol enables maximum flexibility for Hypersub creators and opens up expansive possibilities for building new businesses and tools that use onchain payments and data.
+
+## Why STP?
+
+Subscription-based business models are clearly advantageous for a variety of businesses, and have become the norm for creative projects and software businesses alike. 
+
+Until last year, launching an onchain subscription was difficult, as NFTs and ERC20s had no concept of time embedded within them. Instead, they offered one-time, discrete value transfer between buyers and sellers.
+
+Token allowances and streaming escrow contracts are one solution to this problem, but they are complex and difficult to use.
+
+We made STP to simplify creating and managing recurring revenue onchain. Hypersub is a client focused on enabling creators and businesses to use the protocol in an easy, accessible way.
+
+We believe STP can enable sustainable revenue generation while unlocking the interoperability and power of building onchain.
+
+## What’s new in STPv2?
+
+### Tiers
+
+The primary development of STPv2 is Tiers, which can be understood as the ability for creators to provide different offerings at different price-points. 
+
+For example, a subscriber to the $5 tier might only get access to Bob’s newsletter, while a subscriber at the $10 tier gets access to Bob’s newsletter and his private group chat. Creators can create any number of tiers at any number of price points.
+
+Tiers aren’t always divided cleanly into low, middle, and high priced offers. Sometimes, creators just want to create a specific offer for a specific group of people, independently of the other tiers. For example, Alice might want to offer a discount to subscribers of Bob’s Hypersub or to holders of a particular token. Creators can create custom pricing tied to any token or balance data.
+
+The flexibility of Tiers enables all sorts of other features, including free/pay-what-you-want pricing, token-gated subscriptions, bundles, discounts, non-transferrable tiers, and more. 
+
+With these upgrades, we’ve made it possible to customize almost every aspect of your contract. Here’s a taste of the settings you can now play with:
+
+- Updateable Pricing: pricing of a subscription contract can now be updated for any tier at any time.
+- Inactive Status: for supply-capped subscriptions, you can now mark particular subscribers “inactive.” This allows them to maintain possession of their token while opening up a spot for a new subscriber to join.
+- Subscription Duration: creators can now set minimum and maximum subscription time, helping to avoid situations where someone subscribes for 10 years to a 6 month project or allowing creators to set a minimum level of commitment for subscribers.
+- Max Mintable Time: contracts can also cap the amount of time that any individual subscriber can mint, accommodating short-term projects and experiments.
+- Initial Mint Price: STP contracts can now include an “initiation fee,” which is an up-front fee required to be paid in order to mint any time at all.
+
+### Subscriber Rewards
+
+One of the most powerful, unique features of STP is Subscriber Rewards, which allow creators to share a percentage of their revenue with subscribers. Our philosophy has always been that your earliest subscribers should get rewarded more than later subscribers, incentivizing support for Hypersub creators from the earliest days.
+
+In STPv2, we’ve completely reworked Subscriber Rewards to allow for more flexibility and creativity over how you reward your supporters. Everything about Subscriber Rewards is now customizable, including which tiers are contributing to reward pools, which tiers are receiving the rewards, how much more of the rewards early subscribers receive (if at all), and much more.
+
+Here are a few examples of what’s possible:
+
+- Multi-tier Contributions: with STPv2, funds can flow from any tier into a single Subscriber Rewards pool. You can then choose whether to share rewards with members of every tier or just the top tier of subscribers as a special perk.
+- Adjustable Reward Curves: maybe you want day one subscribers to get 90% of the rewards. Maybe you want all of your subscribers to share rewards equally. The rewards curve is now adjustable to suit your community and the culture you want to foster.
+- External Contributions: now, anyone can send funds to the rewards pool. These funds will be automatically split between subscribers according to the settings you’ve customized. This is a great way to share external revenue sources with your community, so they can share in the upside of even more of your work.
+
+### Access
+
+STPv2 also supports access controls for multiple managers. This enables two things:
+
+1. Team-managed contracts. With STPv2, contracts can be managed by multiple people, with the ability to assign different roles to each manager. This means certain members of your team might be able to create a new Drop, but won’t necessarily have the ability to remove funds from the contract
+2. App-managed contracts. Role management also enables smart contracts and apps to take action on a creator’s behalf (with permission). For example, some might create a tool to withdraw funds from a contract every time the balance hits a certain level.
+
+## What's Next?
+
+We couldn’t be more excited to see the creativity and experiences that STPv2 unlocks. 
+
+While these features are available in the contract today, the Fabric team will be rolling out client-level support for Hypersub users throughout the summer. 
+
+Stay tuned for updates each week as we ship accessible ways for creators to take advantage of this powerful protocol.
+
+The world is yours.

@@ -4,7 +4,16 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  gap: 60px;
-  max-width: 440px;
-  margin: 0 auto;
+  gap: 3.75rem;
+  max-width: 34rem;
+  margin: 7.5rem auto;
+}
+
+img {
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+span {
+  font-weight: 600;
 }

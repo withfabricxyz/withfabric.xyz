@@ -1,0 +1,56 @@
+---
+title: "Contribution Tokens"
+headerImage: /images/contribution-tokens.jpg
+---
+
+import Image from "next/image";
+
+# Contribution Tokens
+
+<p className="date">May 17, 2023</p>
+
+When users contribute to a campaign on Fabric, they receive contribution tokens, proportional to the amount they contributed. These tokens are used to determine a pro rata claim on any future yield.
+
+Beyond the core use of determining yield distribution, contribution tokens are ERC-20 compliant, which enables all sorts of composable experiences, for example: 
+
+- Token gates
+- Allowlists
+- Splits
+- Allowances
+- Transfers
+- Trading
+- Liquidity
+- Derivatives
+- And more
+
+Because contribution tokens conform to the ERC-20 standard, they are interoperable with existing systems, as well as systems not yet built (or imagined). This maximizes optionality for both contributors, and campaign creators.
+
+## How Contribution Tokens Work
+
+The relationship between contribution tokens, and the token in which the campaign is denominated (eg. ETH, USDC, etc.) is one-to-one.
+
+For example, let’s say Alice creates a campaign for 10 ETH (refresher: 1 ETH = 10^18, or 1,000,000,000,000,000,000 Wei). When Bob contributes 1 ETH, 10^18 contribution tokens are simultaneously minted by him, and the total supply of the contribution token increases by 10^18.
+
+If Alice’s campaign is unsuccessful and Bob withdraws his 1 ETH, then his contribution tokens are burned, and the total supply shrinks by 10^18. In aggregate, the token supply for Alice’s failed campaign might look something like this over time:
+
+<Image src="/images/contribution-tokens-01.jpg" alt="Fabric Contribution Tokens" width={544} height={306} />
+
+However, if Alice’s campaign is successful, the supply of contribution tokens and the total contribution amount will diverge. This happens the moment she transfers campaign funds from the campaign contract to the recipient address:
+
+<Image src="/images/contribution-tokens-02.jpg" alt="Fabric Contribution Tokens" width={544} height={306} />
+
+When Alice transfers funds to the recipient, campaign tokens are not burned.
+
+Why?
+
+Because if they were, it would be impossible to track who gets what if/when future yield is deposited. For example, if Bob’s initial 1 ETH campaign contribution represented 10% of the total funds raised, then at the conclusion of the campaign, Bob has 10% of the contribution tokens and so can withdraw 10% of any future deposits into the campaign contract.
+
+If Bob chooses to sell these tokens to Charlie, then Charlie would be entitled to these withdrawals. And so on.
+
+<Image src="/images/contribution-tokens-03.jpg" alt="Fabric Contribution Tokens" width={544} height={306} />
+
+<Image src="/images/contribution-tokens-04.jpg" alt="Fabric Contribution Tokens" width={544} height={306} />
+
+## The World Is Yours
+
+Campaign tokens are a functional requirement for sharing upside. By complying with the ERC-20 specification they become composable crypto-economic primitives. We’re excited to see what you create, together.

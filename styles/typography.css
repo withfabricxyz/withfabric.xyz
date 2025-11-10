@@ -1,7 +1,19 @@
 :root {
   .body--copy {
+    color: var(--color-white-100);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     a {
-      color: var(--color-blue-100);
+      color: var(--color-white-100);
+      text-decoration: underline;
+      text-decoration-color: var(--color-white-82);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3.96px;
+    }
+    a:hover {
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--color-white-100);
     }
   }
 }
@@ -200,5 +212,10 @@
   .monospace {
     font-variant-numeric: lining-nums tabular-nums;
     font-feature-settings: "ss02" on, "ss05" on, "ss06" on, "ss09" on, "ss10" on, "calt" off;
+  }
+
+  .italic {
+    display: inline;
+    font-variation-settings: "slnt" -12; /* adjust slant degree as necessary */
   }
 }
