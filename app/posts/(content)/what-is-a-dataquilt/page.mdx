@@ -11,7 +11,7 @@ import Image from "next/image";
 
 <p className="date">April 25, 2023</p>
 
-Every crowdfunding campaign on Fabric has a unique visual representation called a *dataquilt*:
+Every crowdfunding campaign on Fabric has a unique visual representation called a <em className="italic">dataquilt</em>:
 
 <Image src="/images/dataquilt.gif" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
@@ -21,19 +21,19 @@ By visually stitching together the onchain actions of every individual contribut
 
 ### 1. Patch
 
-The atomic unit of a dataquilt is a *patch*. Patch art can be either vector or bitmap images. Here’s an example, a filled quarter circle:
+The atomic unit of a dataquilt is a <em className="italic">patch</em>. Patch art can be either vector or bitmap images. Here’s an example, a filled quarter circle:
 
 <Image src="/images/what-is-a-dataquilt-01.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 ### 2. Transform
 
-Patch art can be *transformed* by rotating, scaling, or skewing. Here we rotate to four cardinal degrees: 0°, 90°, 180°, and 270°:
+Patch art can be <em className="italic">transformed</em> by rotating, scaling, or skewing. Here we rotate to four cardinal degrees: 0°, 90°, 180°, and 270°:
 
 <Image src="/images/what-is-a-dataquilt-02.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 ### 3. Block
 
-Nine patches are randomly transformed and placed onto a 3x3 grid to form a *block*:
+Nine patches are randomly transformed and placed onto a 3x3 grid to form a <em className="italic">block</em>:
 
 <Image src="/images/what-is-a-dataquilt-03.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
@@ -41,17 +41,17 @@ A block represents the onchain contribution of an individual contributor and can
 
 ### 4. Quilt
 
-Blocks can be stitched together to form a *quilt*. Quilts are an evolving visual representation of collective support for a campaign.
+Blocks can be stitched together to form a <em className="italic">quilt</em>. Quilts are an evolving visual representation of collective support for a campaign.
 
 <Image src="/images/what-is-a-dataquilt-04.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 ### 5. Scale
 
-Quilts can be imbued with additional meaning through scale. Attributes such as newest, oldest, highest, or lowest contribution amount can be communicated through relative sizing.
+Quilts can be imbued with additional meaning through <em className="italic">scale</em>. Attributes such as newest, oldest, highest, or lowest contribution amount can be communicated through relative sizing.
 
 In order to create a visually seamless gradient, blocks are organized into rows, with the block size in each row scaled down by the row number. For example, the blocks in row two are one-half scale, the blocks in row three are one-third scale, and so on.
 
-Every so often this yields a perfectly symmetrical gradient wherein the number of blocks in each row is the same as the row number, for example two blocks in row two, three blocks in row three, and so on (this happens when the number of blocks is a <a href="https://en.wikipedia.org/wiki/Triangular_number">*triangular number*</a>):
+Every so often this yields a perfectly symmetrical gradient wherein the number of blocks in each row is the same as the row number, for example two blocks in row two, three blocks in row three, and so on (this happens when the number of blocks is a <a href="https://en.wikipedia.org/wiki/Triangular_number"><em className="italic">triangular number</em></a>):
 
 <Image src="/images/what-is-a-dataquilt-05.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
@@ -59,11 +59,11 @@ But more often than not, the last row contains orphaned blocks:
 
 <Image src="/images/what-is-a-dataquilt-06.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
-To account for this, the following algorithm is used: if n blocks remain orphaned then add another row of n. For example, if two blocks remain then add another row of two, if three blocks remain then add another row of 3, and so on:
+To account for this, the following algorithm is used: if <em className="italic">n</em> blocks remain orphaned then add another row of <em className="italic">n</em>. For example, if two blocks remain then add another row of two, if three blocks remain then add another row of 3, and so on:
 
 <Image src="/images/what-is-a-dataquilt-07.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
-This creates the infinitely scalable *dataquilt*:
+This creates the infinitely scalable <em className="italic">dataquilt</em>:
 
 <Image src="/images/what-is-a-dataquilt-08.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
