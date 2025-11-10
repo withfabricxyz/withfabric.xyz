@@ -213,4 +213,9 @@
     font-variant-numeric: lining-nums tabular-nums;
     font-feature-settings: "ss02" on, "ss05" on, "ss06" on, "ss09" on, "ss10" on, "calt" off;
   }
+
+  .italic {
+    display: inline;
+    font-variation-settings: "slnt" -12; /* adjust slant degree as necessary */
+  }
 }

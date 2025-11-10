@@ -13,7 +13,7 @@ import Image from "next/image";
 
 Every crowdfunding campaign on Fabric has a unique visual representation called a *dataquilt*:
 
-<Image src="/images/dataquilt.gif" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/dataquilt.gif" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 By visually stitching together the onchain actions of every individual contributor, a collective fabric emerges.
 
@@ -23,19 +23,19 @@ By visually stitching together the onchain actions of every individual contribut
 
 The atomic unit of a dataquilt is a *patch*. Patch art can be either vector or bitmap images. Here’s an example, a filled quarter circle:
 
-<Image src="/images/what-is-a-dataquilt-01.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-01.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 ### 2. Transform
 
 Patch art can be *transformed* by rotating, scaling, or skewing. Here we rotate to four cardinal degrees: 0°, 90°, 180°, and 270°:
 
-<Image src="/images/what-is-a-dataquilt-02.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-02.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 ### 3. Block
 
 Nine patches are randomly transformed and placed onto a 3x3 grid to form a *block*:
 
-<Image src="/images/what-is-a-dataquilt-03.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-03.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 A block represents the onchain contribution of an individual contributor and can be customized and minted as a proof-of-contribution NFT. Because there are four orientations per patch and nine patches per block, there are 262,144 (four to the ninth power) unique block combinations.
 
@@ -43,7 +43,7 @@ A block represents the onchain contribution of an individual contributor and can
 
 Blocks can be stitched together to form a *quilt*. Quilts are an evolving visual representation of collective support for a campaign.
 
-<Image src="/images/what-is-a-dataquilt-04.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-04.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 ### 5. Scale
 
@@ -53,31 +53,31 @@ In order to create a visually seamless gradient, blocks are organized into rows,
 
 Every so often this yields a perfectly symmetrical gradient wherein the number of blocks in each row is the same as the row number, for example two blocks in row two, three blocks in row three, and so on (this happens when the number of blocks is a <a href="https://en.wikipedia.org/wiki/Triangular_number">*triangular number*</a>):
 
-<Image src="/images/what-is-a-dataquilt-05.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-05.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 But more often than not, the last row contains orphaned blocks:
 
-<Image src="/images/what-is-a-dataquilt-06.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-06.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 To account for this, the following algorithm is used: if n blocks remain orphaned then add another row of n. For example, if two blocks remain then add another row of two, if three blocks remain then add another row of 3, and so on:
 
-<Image src="/images/what-is-a-dataquilt-07.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-07.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 This creates the infinitely scalable *dataquilt*:
 
-<Image src="/images/what-is-a-dataquilt-08.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-08.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 ## Fabric Dataquilt Launch Collection
 
 Each quilt contains one foreground and one background color. Though any combination of color pairs can be used, we’ve stuck to our eight brand colors plus black and white. This palette produces 100 unique color combinations:
 
-<Image src="/images/what-is-a-dataquilt-09.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-09.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 These 100 color combinations multiplied by the 320 unique patches we’ve created for the launch collection produce a total of 32,000 dataquilt themes. Each one will only ever be used once. This means that every campaign created on Fabric will have its own visually distinct, one-of-a-kind, dynamic contributor art, and thus every campaign contribution will be a unique, one-of-one NFT.
 
-<Image src="/images/what-is-a-dataquilt-10.jpg" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/what-is-a-dataquilt-10.jpg" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
-<Image src="/images/create.gif" alt="What is a Dataquilt?" width={544} height={306} />
+<Image src="/images/create.gif" alt="What is a Dataquilt?" width={544} height={306} className="breakout" />
 
 To explore the collection and claim a quilt for your campaign go to https://crowdfi.withfabric.xyz/create
 
