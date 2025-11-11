@@ -4,48 +4,24 @@
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
 }
 
 .market-network {
-  position: fixed;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 60rem;
-  min-width: 60rem;
-  padding: 0 4rem;
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-}
-
-.homepage-content {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 34rem;
-  margin: 0 auto 8rem auto;
-}
-
-nav {
-  padding-top: 12rem;
-}
-
-.fabric {
-  width: 100%;
-  max-width: 128px;
-  pointer-events: none;
-  user-select: none;
-  padding-top: 4rem;
+  display: block;
+  width: 50%;
+  margin: 12rem auto 4rem auto;
 }
 
 footer {
-  z-index: 1;
+  margin: 4rem 0;
+}
+
+.fabric {
+  margin: 0 auto;
+  width: 128px;
 }
 
 /* Responsive breakpoints */
@@ -53,95 +29,47 @@ footer {
 /* Desktop to large tablet */
 @media (max-width: 1024px) {
   .market-network {
-    max-width: 48rem;
-    min-width: unset;
-    padding: 0 3rem;
-    top: 8%;
-  }
-
-  .homepage-content {
-    max-width: 40rem;
-    margin: 0 auto;
-  }
-
-  nav {
-    padding-top: 0;
-    margin-top: -16rem;
+    width: 80%;
+    margin: 10rem auto 3rem auto;
   }
 
   .fabric {
-    max-width: 110px;
-    padding-top: 5rem;
+    width: 110px;
   }
 }
 
 /* Tablet / large phone */
 @media (max-width: 768px) {
+  .page {
+    width: 100%;
+  }
+
   .market-network {
-    max-width: 36rem;
-    padding: 0 2rem;
-    top: 6%;
-  }
-
-  .homepage-content {
-    max-width: 28rem;
-    margin: 0 auto 4rem auto;
-    padding: 0 1rem;
-  }
-
-  nav {
-    padding-top: 6rem;
+    width: 80%;
+    margin: 8rem auto 2.5rem auto;
   }
 
   .fabric {
-    max-width: 96px;
-    padding-top: 2.5rem;
+    width: 96px;
+  }
+
+  footer {
+    margin: 3rem 0;
   }
 }
 
 /* Small phones (portrait wide) */
 @media (max-width: 430px) {
   .market-network {
-    max-width: 24rem;
-    padding: 0 1rem;
-    top: 5%;
-  }
-
-  .homepage-content {
-    max-width: 20rem;
-    margin: 0 auto 3rem auto;
-    padding: 0 0.75rem;
-  }
-
-  nav {
-    padding-top: 5.5rem;
+    width: 95%;
+    margin: 10rem auto 4rem auto;
   }
 
   .fabric {
-    max-width: 88px;
-    padding-top: 1.5rem;
-  }
-}
-
-/* Smallest phones */
-@media (max-width: 390px) {
-  .market-network {
-    max-width: 20rem;
-    padding: 0 0.5rem;
-    top: 4%;
+    width: 88px;
   }
 
-  .homepage-content {
-    max-width: 18rem;
-    margin: 0 auto 2.5rem auto;
-  }
-
-  nav {
-    padding-top: 4.5rem;
-  }
-
-  .fabric {
-    max-width: 72px;
-    padding-top: 1rem;
+  footer {
+    margin: 4rem 0;
   }
 }
