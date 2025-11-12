@@ -7,8 +7,9 @@ export default function Homepage() {
   return (
     <div className="page">
       <img className="market-network"src="/images/market-network.svg" alt="" />
-      <Footer />
-      <img className="fabric" src="/images/fabric.svg" alt="" />
+      <Link href="/about">
+        <img className="fabric" src="/images/fabric.svg" alt="" />
+      </Link>
     </div>
   )
 }
