@@ -9,10 +9,10 @@
 
 .spark,
 .spark-color {
-  animation: rotate 30s linear infinite;
+  animation: rotate 60s linear infinite;
   transform-origin: center;
   will-change: transform;
-  transition: scale 0.2125s var(--ease-out-ios);
+  transition: scale .2125s var(--ease-out-ios);
 }
 
 .spark:hover,

@@ -2,7 +2,6 @@ footer {
   ul {
     list-style-type:none;
     padding:0;
-    margin: 56rem 0 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,5 +16,21 @@ footer {
     text-decoration-color: var(--color-white-82);
     text-decoration-thickness: 1px;
     text-underline-offset: 3.96px;
+  }
+}
+
+/* Responsive breakpoints */
+
+/* Tablet / large phone */
+@media (max-width: 768px) {
+  footer ul {
+    gap: 40px;
+  }
+}
+
+/* Small phones (portrait wide) */
+@media (max-width: 430px) {
+  footer ul {
+    gap: 32px;
   }
 }

@@ -3,7 +3,7 @@ import { Head } from 'nextra/components'
 import '../styles/app.css';
 
 export const metadata = {
-  title: 'Blog Example'
+  title: 'Fabric'
 }
 
 export default async function RootLayout({ children }) {

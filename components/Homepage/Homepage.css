@@ -4,44 +4,72 @@
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
 }
 
 .market-network {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 960px;
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-}
-
-.homepage-content {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 34rem;
-  margin: 0 auto 8rem auto;
-}
-
-nav {
-  padding-top: 12rem;
-}
-
-.fabric {
-  width: 100%;
-  max-width: 128px;
-  pointer-events: none;
-  user-select: none;
-  padding-top: 4rem;
+  display: block;
+  width: 50%;
+  margin: 12rem auto 4rem auto;
 }
 
 footer {
-  z-index: 1;
+  margin: 4rem 0;
+}
+
+.fabric {
+  margin: 0 auto;
+  width: 128px;
+}
+
+/* Responsive breakpoints */
+
+/* Desktop to large tablet */
+@media (max-width: 1024px) {
+  .market-network {
+    width: 80%;
+    margin: 10rem auto 3rem auto;
+  }
+
+  .fabric {
+    width: 110px;
+  }
+}
+
+/* Tablet / large phone */
+@media (max-width: 768px) {
+  .page {
+    width: 100%;
+  }
+
+  .market-network {
+    width: 80%;
+    margin: 8rem auto 2.5rem auto;
+  }
+
+  .fabric {
+    width: 96px;
+  }
+
+  footer {
+    margin: 3rem 0;
+  }
+}
+
+/* Small phones (portrait wide) */
+@media (max-width: 430px) {
+  .market-network {
+    width: 95%;
+    margin: 10rem auto 4rem auto;
+  }
+
+  .fabric {
+    width: 88px;
+  }
+
+  footer {
+    margin: 4rem 0;
+  }
 }

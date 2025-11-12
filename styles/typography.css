@@ -216,6 +216,6 @@
 
   .italic {
     display: inline;
-    font-variation-settings: "slnt" -12; /* adjust slant degree as necessary */
+    font-variation-settings: "slnt" -.1; /* adjust slant degree as necessary */
   }
 }
