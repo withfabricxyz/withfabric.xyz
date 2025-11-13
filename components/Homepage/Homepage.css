@@ -4,7 +4,7 @@
   overflow: hidden;
   margin: 0 auto;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh; /* otherwise the image and Fabric link get cut off on large viewports */
 }
 
 /* Background image sits in a pseudo-element so it can animate opacity */
@@ -85,7 +85,8 @@ footer {
 }
 
 .fabric {
-  margin: 0 auto;
+  display: block;
+  margin: 0 auto 8.5rem;
   width: 128px;
 }
 
