@@ -11,7 +11,7 @@ footer {
     text-decoration: none !important;
   }
   a:hover {
-    color: var(--color-white-100);
+    color: var(--color-white-80);
     text-decoration: underline !important;
     text-decoration-color: var(--color-white-82);
     text-decoration-thickness: 1px;
