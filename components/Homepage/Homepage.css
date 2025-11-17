@@ -1,8 +1,9 @@
 .page {
-  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  margin: 0 auto;
-  overflow: hidden;
+  margin: 0;
 }
 
 .page::before {
@@ -39,12 +40,6 @@
   }
 }
 
-.market-network {
-  margin: 6vh auto 4vh auto;
-  padding: 5vh;
-  width: 55%;
-}
-
 /* Fade-in the market-network after the background finishes (background: 1400ms) */
 .market-network {
   opacity: 0;
@@ -63,6 +58,13 @@
   }
 }
 
+.market-network {
+  min-width: 40vw;
+  width: 48vw;
+  max-width: 50vw;
+  padding-bottom: 8vh;
+}
+
 .fabric {
   margin: 0 auto;
   width: 128px;
@@ -75,23 +77,15 @@
 }
 
 /* Responsive breakpoints */
-@media (max-width: 1366px) {
-  .market-network {
-    margin: 4.25vh auto 1vh auto;
-  }
-}
-
 @media (max-width: 1024px) {
   .market-network {
-    width: 80%;
-    margin: 11.5vh auto 4vh auto;    
+    min-width: 72vw;
   }
 }
 
 @media (max-height: 768px) {
   .market-network {
-    width: 55%;
-    margin: 4vh auto -2.5vh auto;
+    min-width: 56vw;
   }
 
   .fabric {
@@ -99,16 +93,9 @@
   }
 }
 
-@media (max-width: 768px) {
-  .market-network {
-    margin: 11vh auto 1vh auto;
-  }
-}
-
 @media (max-width: 430px) {
   .market-network {
-    width: 80%;
-    margin: 20vh auto 9vh auto;
+    min-width: 88vw;
   }
 
   .fabric {
