@@ -100,3 +100,31 @@ ul {
 iframe {
   border-radius: 5px;
 }
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .post-content {
+    width: 72%;
+  }
+}
+
+@media (max-height: 768px) {
+  .post-content {
+    width: 72%;
+  }
+}
+
+@media (max-width: 430px) {
+  .post-content {
+    width: 80%;
+  }
+
+  h3 {
+    line-height: 1.5rem;
+  }
+
+  img.breakout {
+    min-width: 50% !important;
+    margin: 16px 0 !important;
+  }
+}
