@@ -12,7 +12,7 @@ export default function AboutPage({ children }) {
     <Link href="/">
       <Spark />
     </Link>
-      <div className="about-content body--copy">
+      <div className="body--copy">
         <p>Fabric was founded in 2022, with seed funding from Polychain Capital, Eniac Ventures, Mischief, and Reverie. The Fabric team is Jonny Mack, Dan Simpson, and Chris Douglas.</p>
 
         <p>Our first product was an <a href="posts/contribution-tokens">onchain</a> <a href="posts/what-is-crowdfinancing">crowdfunding protocol</a> and <a href="posts/announcing-crowdfi">user</a> <a href="posts/what-is-a-dataquilt">interface</a>, launched in April of 2023. ~$500k was raised by 377 campaigns from 916 unique contributors. Some of our favorites were <a href="https://crowdfi.withfabric.xyz/campaign/farcaster-meetup-fund-12vw1bash08hs"><em className="italic">Farcaster Meetup Fund</em></a>, <a href="https://crowdfi.withfabric.xyz/campaign/farcon-fund-1-pj66h3w2gc8w"><em className="italic">FarCon Fund</em></a>, <a href="https://crowdfi.withfabric.xyz/campaign/fabric-on-base-1fctinte15urk"><em className="italic">FABRIC on BASE</em></a>, <a href="https://crowdfi.withfabric.xyz/campaign/model-wip-13m5e2kzo8su8"><em className="italic">MODEL-WIP</em></a>, and <a href="https://crowdfi.withfabric.xyz/campaign/farcon-2024-pre-commit-4x2ya8uejw8w"><em className="italic">FarCon 2024</em></a>.</p>

@@ -24,3 +24,27 @@ span {
   margin-right: calc(50% - 20rem);
   border-radius: 5px;
 }
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .about-page {
+    width: 80%;
+  }
+}
+
+@media (max-height: 768px) {
+  .about-page {
+    width: 80%;
+  }
+}
+
+@media (max-width: 430px) {
+  .about-page {
+    width: 72%;
+  }
+
+  .breakout {
+    min-width: 50%;
+    margin: 0;
+  }
+}
