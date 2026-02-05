@@ -1,5 +1,6 @@
 import { Layout } from 'nextra-theme-blog'
 import { Head } from 'nextra/components'
+import './globals.css';
 import '../styles/app.css';
 
 export const metadata = {

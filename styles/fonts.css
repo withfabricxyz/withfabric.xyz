@@ -1,7 +1,61 @@
 @font-face {
-  font-family: "ABC Diatype Variable";
-  font-weight: 100 1000;
-  font-display: auto;
-  src: url("/fonts/ABCDiatypeVariable.woff2") format("woff2-variations"),
-    url("/fonts/ABCDiatypeVariable.woff") format("woff-variations");
+	font-family: "Sohne Breit";
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: url("/fonts/Sohne/Breit/soehne-breit-buch.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Sohne Breit";
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+	src: url("/fonts/Sohne/Breit/soehne-breit-kraftig.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Sohne Breit";
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+	src: url("/fonts/Sohne/Breit/soehne-breit-halbfett.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Sohne Breit";
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	src: url("/fonts/Sohne/Breit/soehne-breit-dreiviertelfett.woff2")
+		format("woff2");
+}
+
+@font-face {
+	font-family: "Sohne Mono";
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: url("/fonts/Sohne/Mono/soehne-mono-buch.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Sohne Mono";
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+	src: url("/fonts/Sohne/Mono/soehne-mono-kraftig.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Sohne Mono";
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	src: url("/fonts/Sohne/Mono/soehne-mono-dreiviertelfett.woff2")
+		format("woff2");
+}
+
+.monospace {
+	font-family: "Sohne Mono", monospace;
 }
