@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --font-breit: "Sohne Breit", sans-serif;
+
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+  --color-quaternary: var(--color-quaternary);
+
+  --color-surface-base: var(--color-surface-base);
+  --color-surface-mid: var(--color-surface-mid);
+  --color-surface-low: var(--color-surface-low);
+  --color-surface-sub: var(--color-surface-sub);
+
+  --color-border: var(--color-border);
+  --color-outline: var(--color-outline);
+  --color-disabled: var(--color-disabled);
+
+  --color-focus: var(--color-focus);
+  --color-black: var(--color-black);
+  --color-white: var(--color-white);
+
+  --color-pink: var(--color-pink);
+  --color-red: var(--color-red);
+  --color-yellow: var(--color-yellow);
+  --color-green: var(--color-green);
+
+  --color-fabric-purple: var(--color-fabric-purple);
+  --color-fabric-red: var(--color-fabric-red);
+  --color-fabric-acid: var(--color-fabric-acid);
+  --color-fabric-green: var(--color-fabric-green);
+  --color-fabric-pink: var(--color-fabric-pink);
+  --color-fabric-yellow: var(--color-fabric-yellow);
+  --color-fabric-light-blue: var(--color-fabric-light-blue);
+}
+
+/* ── Nextra Layout Override ───────────────────────── */
+
+article:has(.landing) {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+/* ── Hero Animation ───────────────────────────────── */
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Spark Animations ─────────────────────────────── */
+
+@keyframes spark-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spark,
+.spark-color {
+  animation: spark-rotate 60s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+  transition: scale 0.2125s ease-out;
+}
+
+.spark:hover,
+.spark-color:hover {
+  animation-play-state: paused;
+  scale: 1.05;
+}
+
+.spark:active,
+.spark-color:active {
+  scale: 0.95;
+  transition: scale 0.15s ease-out;
+}
+
+.spark-leaf {
+  transition: fill 0.125s linear;
+}
+
+.spark:hover .spark-leaf-1 {
+  fill: #8800ff;
+  transition-delay: 0s;
+}
+
+.spark:hover .spark-leaf-2 {
+  fill: #117d45;
+  transition-delay: 0.025s;
+}
+
+.spark:hover .spark-leaf-3 {
+  fill: #91f925;
+  transition-delay: 0.05s;
+}
+
+.spark:hover .spark-leaf-4 {
+  fill: #332bfd;
+  transition-delay: 0.075s;
+}
+
+.spark:hover .spark-leaf-5 {
+  fill: #fa0b54;
+  transition-delay: 0.1s;
+}
+
+.spark:hover .spark-leaf-6 {
+  fill: #fb42df;
+  transition-delay: 0.125s;
+}
+
+.spark:hover .spark-leaf-7 {
+  fill: #fba808;
+  transition-delay: 0.175s;
+}
+
+.spark:hover .spark-leaf-8 {
+  fill: #0bc1fa;
+  transition-delay: 0.2s;
+}
