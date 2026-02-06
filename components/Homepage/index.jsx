@@ -164,21 +164,21 @@ export default function Homepage() {
 				<footer className="flex justify-between gap-10 w-full max-md:flex-wrap max-md:gap-x-20 max-md:gap-y-16 max-[430px]:gap-x-16 max-[430px]:gap-y-14">
 					<div className="flex flex-col gap-10">
 						<Link
-							href="https://spandex.withfabric.xyz"
+							href="https://spandex.sh"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
 							spanDEX
 						</Link>
 						<Link
-							href="https://swap.withfabric.xyz"
+							href="https://demo.spandex.sh"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
 							Swap
 						</Link>
 						<Link
-							href="https://quotebench.withfabric.xyz"
+							href="https://benchmark.withfabric.xyz"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
@@ -187,14 +187,14 @@ export default function Homepage() {
 					</div>
 					<div className="flex flex-col gap-10">
 						<Link
-							href="/faq"
+							href="https://spandex.sh/overview"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
 							FAQ
 						</Link>
 						<Link
-							href="https://docs.withfabric.xyz"
+							href="https://spandex.sh/getting-started"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
