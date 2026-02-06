@@ -106,3 +106,46 @@
 		--color-focus: #0afa4a;
 	}
 }
+
+@theme {
+	--spacing: 0.125rem;
+
+	--color-primary: var(--color-primary);
+	--color-secondary: var(--color-secondary);
+	--color-tertiary: var(--color-tertiary);
+	--color-quaternary: var(--color-quaternary);
+
+	--color-surface-base: var(--color-surface-base);
+	--color-surface-mid: var(--color-surface-mid);
+	--color-surface-low: var(--color-surface-low);
+	--color-surface-sub: var(--color-surface-sub);
+
+	--color-border: var(--color-border);
+	--color-outline: var(--color-outline);
+	--color-disabled: var(--color-disabled);
+
+	--color-focus: var(--color-focus);
+	--color-black: var(--color-black);
+	--color-white: var(--color-white);
+
+	--color-pink: var(--color-pink);
+	--color-red: var(--color-red);
+	--color-yellow: var(--color-yellow);
+	--color-green: var(--color-green);
+
+	--color-fabric-purple: var(--color-fabric-purple);
+	--color-fabric-acid: var(--color-fabric-acid);
+	--color-fabric-pink: var(--color-fabric-pink);
+	--color-fabric-orange: var(--color-fabric-orange);
+	--color-fabric-light-blue: var(--color-fabric-light-blue);
+
+	--z-index-layer-background: -1;
+	--z-index-layer-base: 0;
+	--z-index-layer-navigation: 5;
+	--z-index-layer-dialog-scrim: 9;
+	--z-index-layer-dialog: 10;
+	--z-index-layer-bottom-sheet-scrim: 14;
+	--z-index-layer-bottom-sheet: 15;
+	--z-index-layer-toast: 20;
+	--z-index-layer-tooltip: 25;
+}
