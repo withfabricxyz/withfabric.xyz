@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Spark from "../Spark";
-import { ThemePicker } from "../ThemePicker";
 import { MarketNetwork } from "./MarketNetwork";
 
 const ctaBase =
