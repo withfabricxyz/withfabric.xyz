@@ -20,8 +20,8 @@ html {
 html,
 body {
 	/* background-color: var(--color-surface-base); */
-	font-family: var(--font-family-default);
-	color: var(--color-type-primary-100);
+	font-family: "Sohne Breit", sans-serif;
+	color: var(--color-secondary);
 	font-feature-settings: "ss02" on, "ss05" on, "ss06" on, "ss08" on, "ss09" on,
 		"ss10" on, "liga" off, "calt" off;
 	min-width: 320px;
