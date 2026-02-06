@@ -12,10 +12,7 @@ const footerLink =
 export default function Homepage() {
 	return (
 		<div className="landing relative flex justify-center min-h-screen bg-surface-base overflow-hidden">
-			<ThemePicker />
-
 			<div className="flex flex-col gap-14 w-full px-10 pt-50 pb-24 box-border min-[430px]:gap-16 min-[430px]:px-12 min-[430px]:pt-60 min-[430px]:pb-30 md:w-360 md:max-w-full md:gap-20 md:px-0 md:pt-100 md:pb-40">
-				{/* Hero */}
 				<div className="relative w-full md:h-250 flex flex-col items-center gap-16 md:block">
 					<MarketNetwork />
 
@@ -25,32 +22,29 @@ export default function Homepage() {
 					</h1>
 				</div>
 
-				{/* CTA Buttons */}
 				<div className="flex items-stretch w-full">
 					<Link
-						href="https://spandex.withfabric.xyz"
+						href="https://spandex.sh/"
 						className={`${ctaBase} bg-primary rounded-l-xs`}
 					>
 						spanDEX
 					</Link>
 					<Link
-						href="https://swap.withfabric.xyz"
+						href="https://demo.spandex.sh/"
 						className={`${ctaBase} bg-primary/75`}
 					>
 						Swap
 					</Link>
 					<Link
-						href="https://quotebench.withfabric.xyz"
+						href="https://benchmark.withfabric.xyz/"
 						className={`${ctaBase} bg-primary/50 rounded-r-xs`}
 					>
 						Quotebench
 					</Link>
 				</div>
 
-				{/* Divider */}
 				<hr className="w-full m-0 border-0 border-t border-primary" />
 
-				{/* Investors Section */}
 				<section className="flex flex-col gap-10 w-full">
 					<span className="font-breit font-normal text-[12px] leading-[1.1667em] text-secondary">
 						Investors—
@@ -166,10 +160,8 @@ export default function Homepage() {
 					</div>
 				</section>
 
-				{/* Divider */}
 				<hr className="w-full m-0 border-0 border-t border-primary" />
 
-				{/* Footer */}
 				<footer className="flex justify-between gap-10 w-full max-md:flex-wrap max-md:gap-x-20 max-md:gap-y-16 max-[430px]:gap-x-16 max-[430px]:gap-y-14">
 					<div className="flex flex-col gap-10">
 						<Link
@@ -210,7 +202,7 @@ export default function Homepage() {
 							Docs
 						</Link>
 						<Link
-							href="/support"
+							href="mailto:support@withfabric.xyz"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
@@ -220,6 +212,8 @@ export default function Homepage() {
 					<div className="flex flex-col gap-10">
 						<Link
 							href="https://app.termly.io/policy-viewer/policy.html?policyUUID=6e986c4b-1b7e-4989-ab47-775c8b442841"
+							rel="noopener noreferrer"
+							target="_blank"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
@@ -227,13 +221,17 @@ export default function Homepage() {
 						</Link>
 						<Link
 							href="https://app.termly.io/policy-viewer/policy.html?policyUUID=2dded3c3-1d19-4400-86bd-8c038e473855"
+							rel="noopener noreferrer"
+							target="_blank"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
 							Privacy
 						</Link>
 						<Link
-							href="/brand"
+							href="https://www.figma.com/design/bpMk0SKE3YzSoURnOxML3b/Brand-Assets?node-id=0-1&p=f&t=8AgwZgzFFYmY0IVY-11"
+							rel="noopener noreferrer"
+							target="_blank"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
