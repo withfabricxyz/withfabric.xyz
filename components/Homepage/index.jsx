@@ -48,7 +48,7 @@ export default function Homepage() {
 					<span className="font-breit font-normal text-[12px] leading-[1.1667em] text-secondary">
 						Investors—
 					</span>
-					<div className="flex justify-between items-center w-full">
+					<div className="flex justify-between gap-4 items-center w-full">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="137"
