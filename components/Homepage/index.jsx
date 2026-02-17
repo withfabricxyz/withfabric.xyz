@@ -16,8 +16,7 @@ export default function Homepage() {
 					<MarketNetwork />
 
 					<h1 className="md:absolute md:bottom-0 md:left-0 w-full m-0 font-breit font-semibold text-[18px] min-[430px]:text-[22px] md:text-[28px] leading-[1em] text-center text-primary antialiased">
-						Permissionless capital coordination, efficient markets, economic
-						freedom.
+						High accuracy, low latency onchain trade execution
 					</h1>
 				</div>
 
