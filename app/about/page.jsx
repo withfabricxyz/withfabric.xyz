@@ -86,15 +86,14 @@ export default function AboutPage() {
 				</p>
 
 				<p>
-					Our third product, launching in 2026, is a swap routing API,
-					benchmarking tool, and user interface.
+					Our third product is a DEX aggregation API (<a href="https://withfabric.xyz">Fabric</a>), free and open source meta-aggregator library (<a href="https://spandex.sh">spanDEX</a>), performance benchmarking tool (<a href="https://benchmark.withfabric.xyz">Quotebench</a>), and <a href="https://demo.spandex.sh">demo swap interface</a>.
 				</p>
 
 				<p>
 					With each iteration of the company we've learned, grown, and adapted
 					to market reality. Though our products have taken many forms, our
-					motivations remain the same: permissionless capital coordination,
-					efficient markets, economic freedom .
+					motivations remain the same: <em>permissionless capital coordination,
+					efficient markets, economic freedom</em>.
 				</p>
 
 				<img className="breakout" src="/images/team.jpg" alt="" />
