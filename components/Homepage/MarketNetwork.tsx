@@ -6,7 +6,7 @@ export function MarketNetwork() {
 			viewBox="0 0 578 578"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			className="fill-primary stroke-primary md:absolute md:top-0 md:left-1/2 md:-translate-x-1/2 w-full max-w-[320px] h-auto md:w-205 md:h-205 md:max-w-none opacity-0 animate-[hero-fade-in_4s_cubic-bezier(0.2,0.9,0.3,1)_300ms_forwards]"
+			className="mx-auto fill-primary stroke-primary w-full max-w-[320px] h-auto md:w-205 md:h-205 md:max-w-none opacity-0 animate-[hero-fade-in_4s_cubic-bezier(0.2,0.9,0.3,1)_300ms_forwards]"
 		>
 			<title>Market Network</title>
 			<path

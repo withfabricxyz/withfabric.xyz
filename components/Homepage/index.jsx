@@ -12,10 +12,10 @@ export default function Homepage() {
 	return (
 		<div className="landing relative flex justify-center min-h-screen bg-surface-base overflow-hidden">
 			<div className="flex flex-col gap-14 w-full px-10 pt-50 pb-24 box-border min-[430px]:gap-16 min-[430px]:px-12 min-[430px]:pt-60 min-[430px]:pb-30 md:w-360 md:max-w-full md:gap-20 md:px-0 md:pt-100 md:pb-40">
-				<div className="relative w-full md:h-250 flex flex-col items-center gap-16 md:block">
+				<div className="relative w-full md:h-250 flex flex-col items-center justify-center gap-16">
 					<MarketNetwork />
 
-					<h1 className="md:absolute md:bottom-0 md:left-0 w-full m-0 font-breit font-semibold text-[18px] min-[430px]:text-[22px] md:text-[28px] leading-[1em] text-center text-primary antialiased">
+					<h1 className="w-full font-breit font-semibold text-[18px] min-[430px]:text-[22px] md:text-[40px] leading-[1em] text-center text-primary antialiased">
 						High accuracy, low latency onchain trade execution
 					</h1>
 				</div>
