@@ -193,7 +193,7 @@ export default function Homepage() {
 							FAQ
 						</Link>
 						<Link
-							href="https://spandex.sh/getting-started"
+							href="https://docs.withfabric.xyz"
 							className={footerLink}
 							style={{ textUnderlineOffset: "25%" }}
 						>
