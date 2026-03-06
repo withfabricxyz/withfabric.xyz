@@ -22,16 +22,16 @@ export default function Homepage() {
 
 				<div className="flex items-stretch w-full">
 					<Link
-						href="https://spandex.sh/"
+						href="https://docs.withfabric.xyz"
 						className={`${ctaBase} bg-primary rounded-l-xs`}
 					>
-						spanDEX
+						Docs
 					</Link>
 					<Link
-						href="https://demo.spandex.sh/"
+						href="https://spandex.sh/"
 						className={`${ctaBase} bg-primary/75`}
 					>
-						Swap
+						spanDEX
 					</Link>
 					<Link
 						href="https://benchmark.withfabric.xyz/"
