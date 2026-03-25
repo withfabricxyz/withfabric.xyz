@@ -15,6 +15,13 @@ export const metadata = {
 		apple: "/apple-touch-icon.png",
 	},
 	manifest: "/manifest.json",
+	openGraph: {
+		images: [{ url: "/og.jpg" }],
+	},
+	twitter: {
+		card: "summary_large_image",
+		images: [{ url: "/og.jpg" }],
+	},
 };
 
 export default async function RootLayout({ children }) {
