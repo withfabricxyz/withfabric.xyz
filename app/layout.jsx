@@ -1,6 +1,7 @@
 import { Layout } from "nextra-theme-blog";
 import { Head } from "nextra/components";
 import { ThemePicker } from "../components/ThemePicker";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 import "../styles/app.css";
 
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }) {
 					{children}
 					<ThemePicker />
 				</Layout>
+				<Analytics />
 			</body>
 		</html>
 	);
