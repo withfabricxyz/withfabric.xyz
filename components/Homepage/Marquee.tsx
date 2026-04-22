@@ -1,39 +1,77 @@
 "use client";
 
-import { useState } from "react";
+import { motion, useAnimationFrame, useMotionValue } from "motion/react";
+import { useLayoutEffect, useRef } from "react";
 
-/** Loop duration in seconds per full cycle. Lower = faster. Pass a custom `duration` prop to override per row. */
-export const MARQUEE_DURATION = 10;
+/** Normal scroll speed in seconds per content-width. Lower = faster. */
+export const MARQUEE_DURATION = 40;
+export const MARQUEE_HOVER_DURATION = 120;
 
 export default function Marquee({
 	children,
 	direction = "rtl",
 	gap = 40,
 	duration = MARQUEE_DURATION,
+	hoverDuration = MARQUEE_HOVER_DURATION,
+}: {
+	children: React.ReactNode;
+	direction?: "ltr" | "rtl";
+	gap?: number;
+	duration?: number;
+	hoverDuration?: number;
 }) {
-	const [paused, setPaused] = useState(false);
+	const x = useMotionValue(0);
+	const contentRef = useRef<HTMLDivElement>(null);
+	const hoveredRef = useRef(false);
+
+	// LTR starts at -contentWidth so logos enter from the left on first frame
+	useLayoutEffect(() => {
+		if (direction === "ltr" && contentRef.current) {
+			x.set(-contentRef.current.offsetWidth);
+		}
+	}, [direction, x]);
+
+	useAnimationFrame((_, delta) => {
+		const contentWidth = contentRef.current?.offsetWidth ?? 0;
+		if (contentWidth === 0) return;
+
+		const activeDuration = hoveredRef.current ? hoverDuration : duration;
+		const step = (contentWidth / (activeDuration * 1000)) * delta;
+
+		let newX: number;
+		if (direction === "rtl") {
+			newX = x.get() - step;
+			if (newX <= -contentWidth) newX += contentWidth;
+		} else {
+			newX = x.get() + step;
+			if (newX >= 0) newX -= contentWidth;
+		}
+
+		x.set(newX);
+	});
 
 	const groupStyle = {
 		gap: `${gap}px`,
-		// Trailing padding matches the gap so the loop seam looks identical to spacing between logos
 		paddingRight: `${gap}px`,
 	};
 
 	return (
-		// biome-ignore  lint/a11y/noStaticElementInteractions: <>
+		// biome-ignore lint/a11y/noStaticElementInteractions: <>
 		<div
 			className="overflow-hidden w-full"
-			onMouseEnter={() => setPaused(true)}
-			onMouseLeave={() => setPaused(false)}
+			onMouseEnter={() => {
+				hoveredRef.current = true;
+			}}
+			onMouseLeave={() => {
+				hoveredRef.current = false;
+			}}
 		>
-			<div
-				className="flex w-max items-center"
-				style={{
-					animation: `marquee-${direction} ${duration}s linear infinite`,
-					animationPlayState: paused ? "paused" : "running",
-				}}
-			>
-				<div className="flex shrink-0 items-center" style={groupStyle}>
+			<motion.div className="flex w-max items-center" style={{ x }}>
+				<div
+					ref={contentRef}
+					className="flex shrink-0 items-center"
+					style={groupStyle}
+				>
 					{children}
 				</div>
 				<div
@@ -43,7 +81,7 @@ export default function Marquee({
 				>
 					{children}
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 }
