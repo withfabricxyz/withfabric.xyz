@@ -33,6 +33,7 @@ export default function PostHeader({ posts }) {
 	return (
 		<div
 			className="post-header-image"
+			title={currentPost.frontMatter.headerImageTitle}
 			style={{
 				backgroundImage: `url(${currentPost.frontMatter.headerImage})`,
 			}}
