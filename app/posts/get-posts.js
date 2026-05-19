@@ -7,7 +7,7 @@ export async function getPosts() {
     route: '/posts'
   })
   return directories
-    .filter(post => post.name !== 'index')
+    .filter(post => post.name !== 'index' && !post.frontMatter.hidden)
     .sort((a, b) => new Date(b.frontMatter.date) - new Date(a.frontMatter.date))
 }
 

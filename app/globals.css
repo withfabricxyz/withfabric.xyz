@@ -6,6 +6,11 @@ article:has(.landing) {
 	max-width: none;
 }
 
+article:has(.post-layout) {
+	max-width: none;
+	padding: 0;
+}
+
 /* ── Hero Animation ───────────────────────────────── */
 
 @keyframes hero-fade-in {
