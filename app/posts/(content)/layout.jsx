@@ -4,6 +4,7 @@ import "../Posts.css";
 import Spark from "../../../components/Spark";
 import Link from "next/link";
 import { ThemePicker } from "../../../components/ThemePicker";
+import NewsletterForm from "../../../components/NewsletterForm";
 
 export default async function PostLayout({ children }) {
 	const posts = await getPosts();
@@ -13,8 +14,9 @@ export default async function PostLayout({ children }) {
 			<PostHeader posts={posts} />
 			<div className="post-content">
 				<div className="body--copy">{children}</div>
+				<NewsletterForm />
 			</div>
-			<Link href="/">
+			<Link href="https://blog.withfabric.xyz/posts">
 				<Spark colored />
 			</Link>
 			<ThemePicker />

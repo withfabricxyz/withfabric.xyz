@@ -29,13 +29,13 @@ A quote is the best possible price for a given token pair and trade size. To gen
 
 Additionally, high-quality quote providers will simulate execution as part of their quote generation, increasing accuracy.
 
-Market volatility stresses each layer simultaneously. The system is trying to compute an optimal route through infrastructure where the state changes faster than can be reliably estimated, ranked, and returned.
+Market volatility stresses each layer simultaneously. The system is trying to compute an optimal route through infrastructure where the state changes faster than can be reliably computed, estimated, and returned.
 
 An aggregator that is shifting to race against state invalidation *on top* of solving a routing problem is going to have more issues.
 
 Forces that govern stability are dynamic, rising and falling with market activity and spiking hardest when demand is high. When choosing an aggregator, inconsistency returning quotes is a disaster waiting to happen: the worst moment to find out your swaps don't work is when your users need it most.
 
-<Image src="/images/why-your-swap-fails_01.png" alt="" width={520} height={360} title="Detail of The Triumph of Death, Pieter Bruegel the Elder - 1562" style={{ marginBottom: 0 }} />
+<Image src="/images/why-your-swap-fails_01.jpg" alt="" width={520} height={360} title="Detail of The Triumph of Death, Pieter Bruegel the Elder - 1562" style={{ marginBottom: 0 }} />
 
 <h2 style={{ marginTop: '20px' }}>Trade Winds Blowback</h2>
 
@@ -66,7 +66,9 @@ When volatility hits, all the king's horses and all the king's men are stress-te
 
 Truth is, an aggregator who wins on price, but inconsistently returns a quote is tuned for a metric that's lowest in the hierarchy. It is neglecting the first order that determines if a product even works when it counts.
 
-## Why Stability Comes First
+<Image src="/images/why-your-swap-fails_02.jpg" alt="" width={520} height={360} title="SLAP Pyramid" style={{ marginBottom: 0 }} />
+
+<h2 style={{ marginTop: '20px' }}>Why Stability Comes First</h2>
 
 Stability is foundational to the SLAP framework, Fabric's methodology for evaluating DEX aggregator performance. It is the first dimension: the percentage of requests that return a usable, executable quote.
 

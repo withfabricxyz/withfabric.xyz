@@ -21,7 +21,7 @@ export default async function PostsPage() {
 	const posts = await getPosts();
 
 	return (
-		<div data-pagefind-ignore="all" className="not-prose mx-auto max-w-[614px] px-4 pt-[100px] pb-20">
+		<div data-pagefind-ignore="all" className="not-prose mx-auto max-w-[614px] px-4 pt-[100px] pb-[100px]">
 			<div className="mb-[100px] flex justify-center">
 				<MarketNetwork />
 			</div>
