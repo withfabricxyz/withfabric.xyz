@@ -13,13 +13,6 @@ const ERROR_MESSAGES = {
 	bad_request: 'Something went wrong. Please try again.',
 };
 
-// Replace with Vercel Analytics track(), PostHog, etc. when ready
-function track(event, properties = {}) {
-	if (process.env.NODE_ENV === 'development') {
-		console.log('[analytics]', event, properties);
-	}
-}
-
 export default function NewsletterForm() {
 	const [email, setEmail] = useState('');
 	const [website, setWebsite] = useState(''); // honeypot
@@ -35,7 +28,6 @@ export default function NewsletterForm() {
 		if (!EMAIL_RE.test(trimmed)) {
 			setErrorKey('invalid_email');
 			setStatus('error');
-			track('newsletter_failed', { reason: 'invalid_email_client' });
 			return;
 		}
 
@@ -54,17 +46,13 @@ export default function NewsletterForm() {
 			if (res.ok && data.ok) {
 				setEmail('');
 				setStatus('success');
-				track('newsletter_subscribed');
 			} else {
-				const key = data.error || 'server_error';
-				setErrorKey(key);
+				setErrorKey(data.error || 'server_error');
 				setStatus('error');
-				track('newsletter_failed', { reason: key });
 			}
 		} catch {
 			setErrorKey('network_error');
 			setStatus('error');
-			track('newsletter_failed', { reason: 'network_error' });
 		}
 	}
 
