@@ -1,0 +1,97 @@
+.newsletter-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding-top: 40px;
+	margin-top: 40px;
+	border-top: 1px solid var(--color-primary);
+	width: 100%;
+}
+
+.newsletter-input {
+	width: 100%;
+	border: 1px solid var(--color-primary);
+	border-radius: 2px;
+	padding: 8px 12px;
+	font-family: 'Sohne Mono', monospace;
+	font-size: 12px;
+	line-height: 12px;
+	color: var(--color-primary);
+	background: transparent;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+.newsletter-input::placeholder {
+	color: var(--color-quaternary);
+}
+
+.newsletter-input:focus {
+	border-color: var(--color-focus);
+}
+
+.newsletter-input.is-error {
+	border-color: var(--color-red);
+	color: var(--color-red);
+}
+
+.newsletter-input.is-error::placeholder {
+	color: var(--color-red);
+}
+
+.newsletter-input:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.newsletter-button {
+	width: 100%;
+	height: 40px;
+	background: var(--color-primary);
+	color: var(--color-white);
+	border: none;
+	border-radius: 2px;
+	font-family: 'Sohne Breit', sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 20px;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	transition: opacity 0.15s ease;
+}
+
+.newsletter-button:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.newsletter-button:not(:disabled):hover {
+	opacity: 0.85;
+}
+
+.newsletter-message {
+	font-family: 'Sohne Mono', monospace;
+	font-size: 12px;
+	line-height: 12px;
+	color: var(--color-primary);
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
+}
+
+.newsletter-message--error {
+	color: var(--color-red);
+}
+
+/* Visually hide honeypot from humans; position out of flow */
+.newsletter-honeypot {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
