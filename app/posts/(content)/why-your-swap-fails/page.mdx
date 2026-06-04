@@ -33,7 +33,7 @@ Market volatility stresses each layer simultaneously. The system is trying to co
 
 An aggregator that is shifting to race against state invalidation *on top* of solving a routing problem is going to have more issues.
 
-Forces that govern stability are dynamic, rising and falling with market activity and spiking hardest when demand is high. When choosing an aggregator, inconsistency returning quotes is a disaster waiting to happen: the worst moment to find out your swaps don't work is when your users need it most.
+Market forces are waves stability rides atop; rising, falling, spiking hardest when demand is high. When choosing an aggregator, inconsistency returning quotes is a disaster waiting to happen: the worst moment to find out your swaps don't work is when users need it most.
 
 <Image src="/images/why-your-swap-fails_01.jpg" alt="" width={520} height={360} title="Detail of The Triumph of Death, Pieter Bruegel the Elder - 1562" style={{ marginBottom: 0 }} />
 
@@ -58,15 +58,17 @@ Reliability is stress-tested during volatility. Are quotes failing precisely whe
 
 If your swap provider's stability fails during ordinary conditions, that probably tells you something about how it will behave when conditions deteriorate.
 
-According to [Quotebench](https://benchmark.withfabric.xyz/), Fabric's stability rate is 99.9999%+. Now consider an aggregator with a rate of 95%. What seems like a slight performance dip might actually reveal greater fragility. The reality is their infrastructure pipeline is failing to return usable quotes 5% of the time, in fair weather, at low stakes.
+<Image src="/images/why-your-swap-fails_02.2.jpg" alt="" width={520} height={208} title="Benchmark Data" style={{ marginBottom: 0 }} />
 
-To put that in perspective, if your product does $100M in swap volume per month, and your mean txn is $1,000, that's roughly 5,000 failed swaps every month.
+According to [Quotebench](https://benchmark.withfabric.xyz/), Fabric demonstrates a consistently strong stability rate. Now consider an aggregator with a rate of 95%. What seems like a slight performance dip might actually reveal greater fragility. The reality is their infrastructure pipeline is failing to return usable quotes 5% of the time, in fair weather, at low stakes.
+
+To put that into perspective, if your product does $100M in swap volume per month, and your mean txn is $1,000, that's roughly 5,000 failed swaps every month.
 
 When volatility hits, all the king's horses and all the king's men are stress-tested at scale. An aggregator with less stability in calm markets has no buffer. Are we to assume that a 5% gap in stability isn't likely to change during a storm?
 
 Truth is, an aggregator who wins on price, but inconsistently returns a quote is tuned for a metric that's lowest in the hierarchy. It is neglecting the first order that determines if a product even works when it counts.
 
-<Image src="/images/why-your-swap-fails_02.jpg" alt="" width={520} height={360} title="SLAP Pyramid" style={{ marginBottom: 0 }} />
+<Image src="/images/why-your-swap-fails_03.jpg" alt="" width={520} height={360} title="SLAP Pyramid" style={{ marginBottom: 0 }} />
 
 <h2 style={{ marginTop: '20px' }}>Why Stability Comes First</h2>
 
