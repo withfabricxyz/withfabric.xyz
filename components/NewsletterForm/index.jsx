@@ -86,27 +86,30 @@ export default function NewsletterForm() {
 			<label htmlFor="newsletter-email" className="sr-only">
 				Email address
 			</label>
-			<input
-				id="newsletter-email"
-				type="email"
-				data-1p-ignore
-				data-lpignore="true"
-				value={email}
-				onChange={handleEmailChange}
-				placeholder="Email"
-				autoComplete="off"
-				required
-				disabled={isLoading}
-				aria-invalid={isError}
-				aria-describedby={
-					isError
-						? 'newsletter-error'
-						: isSuccess
-							? 'newsletter-success'
-							: undefined
-				}
-				className={`newsletter-input${isError ? ' is-error' : ''}`}
-			/>
+			<div className={`newsletter-input-wrapper${isError ? ' is-error' : ''}`}>
+				<input
+					id="newsletter-email"
+					type="email"
+					data-1p-ignore
+					data-lpignore="true"
+					value={email}
+					onChange={handleEmailChange}
+					placeholder="Email"
+					autoComplete="off"
+					required
+					disabled={isLoading}
+					aria-invalid={isError}
+					aria-describedby={
+						isError
+							? 'newsletter-error'
+							: isSuccess
+								? 'newsletter-success'
+								: undefined
+					}
+					className={`newsletter-input${isError ? ' is-error' : ''}`}
+				/>
+				<div className="newsletter-input-icon" aria-hidden="true" />
+			</div>
 
 			<button
 				type="submit"

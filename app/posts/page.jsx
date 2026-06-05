@@ -10,8 +10,8 @@ export const metadata = {
 function formatDate(dateStr) {
 	if (!dateStr) return null;
 	return new Date(dateStr).toLocaleDateString("en-US", {
-		month: "long",
-		day: "2-digit",
+		month: "short",
+		day: "numeric",
 		year: "numeric",
 		timeZone: "UTC",
 	});
