@@ -1,0 +1,94 @@
+---
+title: "The Latency Tax: What Slow Aggregators Really Cost You"
+headerImage: /images/the-latency-tax_wallpaper.jpg
+headerImageTitle: "Trading floor, Unknown"
+thumbnail: /images/the-latency-tax_thumb.jpg
+date: 2026-06-17
+---
+
+import Image from "next/image";
+
+# The Latency Tax: What Slow Aggregators Really Cost You
+
+<p className="date">Jun 17, 2026</p>
+
+How expensive is churn? A user requests a quote, waits, then leaves before a quote returns. No revenue occurs, because the swap never happened.
+
+That wait, is precisely the Latency Tax. Most integrators don't know they're paying it. The industry's response: optimize harder for price.
+
+<hr />
+
+## The Dark Matter of Aggregator Performance
+
+There is essentially nothing published in DeFi on the relationship between response time and trade abandonment. You won't find a report on how many swaps die in the loading state, the data just doesn't exist publicly.
+
+But the phenomenon does.
+
+Consider when a user intends to swap. They request a quote. Then, the loader spins just long enough for them to back out. That's a trade that never happened: zero fee revenue, zero volume.
+
+From the integrator's perspective, they lost.
+
+This is simple pattern recognition, one that's been studied in exhaustive detail outside of DeFi.
+
+## What Everyone Else Already Knows
+
+[Google](https://glinden.blogspot.com/2006/11/marissa-mayer-at-web-20.html) figured this out years ago: adding ~500ms to search results drops traffic by 20%. Amazon found that every 100ms added to their page load time cost 1% in sales. These are real revenue numbers, measured at scale, reproducible across businesses.
+
+[Portent](https://portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm) studied 94 million page views across ten ecommerce sites and found that a website loading in 1 second converts at a rate 2.5x higher than one that takes 5 seconds. [Deloitte](https://www.thinkwithgoogle.com/_qs/documents/9757/Milliseconds_Make_Millions_report_hQYAbZJ.pdf) found that a 0.1 second improvement in site speed lifted retail consumer spending by nearly 10%.
+
+The pattern is so consistent that UX researchers have a threshold for it. [Jakob Nielsen's](https://jakobnielsenphd.substack.com/p/time-scale-ux) foundational work on response time established that delays under 100ms feel instantaneous to users; the interaction feels like their action. Once you cross that threshold, the machine starts to feel in control. Somewhere between 1 and 10 seconds, the user's attention breaks entirely. They've moved on.
+
+A swap interface is identical to a checkout page.
+
+The user has something they want to do. They've already made the decision to do it. *They're ready to buy*. If a quote takes too long, they don't wait around patiently; they wonder if something is broken, they second-guess the trade, they check another tab, they churn. The psychology is exactly the same, yet no one is collecting the data.
+
+<div style={{ margin: '80px 0' }}>
+<div className="attribution" style={{ borderLeft: '4px solid var(--color-surface-low)', paddingLeft: '20px' }}>
+*Perfect is the enemy of good.*
+
+— La Bégueule, Voltaire
+</div>
+</div>
+
+## The Trade That Wasn't
+
+Let's frame latency in cost, because this is where a price-first argument collapses. Two aggregators compete for the same trade in app:
+
+Aggregator A (Fabric) returns a quote in under 30ms. Then, the system stalls to collect Aggregator B's quote, which takes about 1,200ms. All while the user waits.
+
+Aggregator B's quote is marginally better: say $0.0001 more on output. The system compares price, Aggregator B wins, and the quote is finally shown to the user.
+
+Now consider the experience:
+
+A user fires up the app and requests a quote. Seconds pass, which is a long enough period of time for the price to move, for doubt to creep in, for the user to notice the clock is ticking. They start wondering if something is wrong, their attention drifts, they churn.
+
+The app collected $0 because the swap didn't happen.
+
+Aggregator B's marginal price improvement delivered nothing to anyone. Meanwhile, Fabric's sub-30ms response returned a quote before the user would have even perceived a wait. The interaction could have felt instant, the trade could have executed, revenue could have been earned.
+
+Congratulations, Aggregator B 'won' due to a (very) marginally better price. It lost everything else.
+
+<Image src="/images/the-latency-tax_01.jpg" alt="" width={520} height={416} style={{ marginBottom: 0 }} />
+
+<h2 style={{ marginTop: '20px' }}>Why Latency Comes Before Price</h2>
+
+This is why SLAP, Fabric's standard for evaluating DEX aggregator performance, places Latency above Stability, but below Accuracy and Price.
+
+The ordering is hierarchical and reflects how performance actually compounds:
+
+1. Stability: if a quote doesn't return at all, nothing else matters.
+2. Latency: a slow quote is a stale quote, and more importantly, it's a quote users may never see.
+3. Accuracy: the gap between a quote and execution.
+4. Price: sits at the top because it's only meaningful after the first three conditions are met.
+
+An aggregator returning the best price in 1,200ms is making a big bet that the user is still there when the quote arrives. In some cases, they aren't. Across millions of quote requests, the compounding effect of those lost sessions is certainly greater than the price edge being chased.
+
+<Image src="/images/the-latency-tax_02.jpg" alt="" width={520} height={208} style={{ margin: '20px 0 0 0' }} />
+
+<Image src="/images/the-latency-tax_03.jpg" alt="" width={520} height={260} style={{ margin: '20px 0 0 0' }} />
+
+<p style={{ marginTop: '20px' }}>Fabric's aggregator returns quotes in under 30ms. This is a categorically different experience. At sub-30ms, a quote is a seamless part of the trading flow, allowing the action to proceed uninterrupted. The user never has a moment to reconsider.</p>
+
+<hr />
+
+<p className="attribution">Fabric operates the <a href="https://withfabric.xyz/" target="_blank" rel="noopener noreferrer">Fabric Aggregator</a> and <a href="https://spandex.sh/" target="_blank" rel="noopener noreferrer">spanDEX</a>, an open-source meta-aggregator library. <a href="https://benchmark.withfabric.xyz/" target="_blank" rel="noopener noreferrer">Quotebench</a>, Fabric's public benchmarking tool, tracks aggregator performance across Stability, Latency, Accuracy, and Price, continuously, in real time.</p>
