@@ -37,7 +37,7 @@ export default async function PostsPage() {
 							className="group flex flex-col gap-10 no-underline"
 							style={{ color: "inherit" }}
 						>
-							<div className="relative aspect-[21/9] overflow-hidden rounded-[2px] grayscale transition-[filter] duration-500 ease-in-out group-hover:grayscale-0">
+							<div className="relative aspect-[21/9] overflow-hidden rounded-[2px] grayscale transition-[filter] duration-200 ease-in-out group-hover:grayscale-0">
 								{(post.frontMatter?.thumbnail || post.frontMatter?.headerImage) && (
 									<Image
 										src={post.frontMatter.thumbnail ?? post.frontMatter.headerImage}
