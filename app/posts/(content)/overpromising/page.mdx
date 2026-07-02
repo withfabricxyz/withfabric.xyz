@@ -1,0 +1,91 @@
+---
+title: "Overpromising Is a Business Model"
+headerImage: /images/overpromising_wallpaper.jpg
+headerImageTitle: "A Meat Stall with the Holy Family Giving Alms, Pieter Aertsen - 1551"
+thumbnail: /images/overpromising_thumb.jpg
+date: 2026-07-01
+---
+
+import Image from "next/image";
+
+# Overpromising Is a Business Model
+
+<p className="date">Jul 1, 2026</p>
+
+Can you build a business where controlled disappointment is more profitable than perfect accuracy? The math is simple: revenue gained outweighs revenue lost to public opinion.
+
+The mismatch between what's sold and delivered *is* the product.
+
+How economically advantageous is routinely overstating quoted output vs. what a user actually receives? And why does this gap consistently benefit an aggregator? Is this a liability for integrators?
+
+<hr />
+
+## Winning at All Costs
+
+An aggregator's primary objective is to win order flow.
+
+And usually, highest number wins.
+
+It's a reasonable heuristic, but flawed: the aggregator most willing to inflate price wins. Every time.
+
+When quote generation is optimized for winning selection, execution quality does not always follow. Any mismatch is ultimately absorbed by the user whose choice was based on the quote they saw, but were never *guaranteed*.
+
+Consider two aggregators competing for the same swap:
+
+- Aggregator A quotes 1,000 USDC and delivers 995.
+- Aggregator B quotes 998 and delivers 997.
+
+Aggregator A is less accurate, but wins every price comparison, despite Aggregator B actually delivering more. If ignoring accuracy is a marketing exercise, operationalizing it can be a business model.
+
+## Positive Slippage as a Revenue Mechanism
+
+The gap between quote and execution runs both ways.
+
+When execution delivers less than quoted, the user absorbs the shortfall up to their slippage tolerance. When execution delivers more, the surplus does not always return to the user.
+
+The perverse incentive is obvious:
+
+If positive slippage always goes to a protocol rather than the user, conservative quoting becomes a revenue strategy. An aggregator quotes output slightly below what execution will likely deliver. User accepts. Execution beats it. The protocol captures the spread. The quote's *inaccuracy* becomes precisely calibrated.
+
+The problem is opacity, users and integrators can't easily tell whether surplus is given, taken, split, or embedded into a broader fee model.
+
+## Routing Incentives and the Execution Gap
+
+Is it really the best route? Or the best route for a business model?
+
+There is yet another potential mismatch when incentives exists for an aggregator to route volume due to:
+
+- Referral fees
+- Volume capture
+- Venue relationships
+
+An aggregator earning referrals fees has an economic reason to route through an exchange independent of whether or not they deliver best execution for the user.
+
+Price simply gets worse due to conflict of interest.
+
+Taken together: Quote inflation, positive slippage capture, and incentive-based routing describe an environment where the delta between quote and execution is actively managed to produce revenue.
+
+For end users, each of these damages credibility, trust and retention. Is your latest integration going to be a liability due to questionable behavior?
+
+<Image src="/images/overpromising_01.jpg" alt="" width={520} height={416} title="SLAP Pyramid" style={{ marginBottom: 0 }} />
+
+<h2 style={{ marginTop: '20px' }}>Why Accuracy Sits Third</h2>
+
+The SLAP framework is Fabric's methodology for evaluating aggregator performance. Accuracy sits above Stability and Latency, but below Price. It is defined as the difference between quote and execution, measured in basis points.
+
+The ordering reflects a hierarchy of needs:
+
+- Stability: a quote that doesn't arrive is a useless quote.
+- Latency: a quote that's slow is a stale quote.
+- Accuracy: a quote that fails to predict execution is a false quote.
+- Price: is only meaningful after the first three conditions are met.
+
+<Image src="/images/overpromising_02.jpg" alt="" width={520} height={206} title="Benchmark Data" style={{ margin: '20px 0 0 0' }} />
+
+<p style={{ marginTop: '20px' }}>From the vantage of <a href="https://benchmark.withfabric.xyz/" target="_blank" rel="noopener noreferrer">Quotebench</a>, a quote that promises 1,000 USDC but actually delivers 999 has negative accuracy of 10 basis points. Over time, this is a signal. Consistent negative accuracy across pairs, chains, and market conditions means an aggregator is probably overpromising as a matter of course.</p>
+
+Execution quality, or the actual amount delivered, rarely enters integration discussion. Quote inflation, positive slippage capture, and incentivized routing are each red flags. The kind integrators avoid.
+
+<hr />
+
+<p className="attribution">Fabric operates the <a href="https://withfabric.xyz/" target="_blank" rel="noopener noreferrer">Fabric Aggregator</a> and <a href="https://spandex.sh/" target="_blank" rel="noopener noreferrer">spanDEX</a>, an open-source meta-aggregator library. <a href="https://benchmark.withfabric.xyz/" target="_blank" rel="noopener noreferrer">Quotebench</a>, Fabric's public benchmarking tool, tracks aggregator performance across Stability, Latency, Accuracy, and Price, continuously, in real time.</p>
