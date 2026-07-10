@@ -11,7 +11,7 @@ import {
 } from "./PerformanceMetricsGrid";
 
 const ctaBase =
-	"text-surface-base flex justify-center items-center flex-1 px-10 py-[16px] font-breit font-medium text-[20px] leading-[1em] text-surface-base no-underline cursor-pointer transition-opacity duration-150 ease-out box-border hover:opacity-[0.85] hover:no-underline max-md:text-[16px] max-md:px-[12px] max-md:py-[14px] max-[430px]:text-[14px] max-[430px]:px-[8px] max-[430px]:py-[12px]";
+	"text-surface-base flex justify-center items-center flex-1 px-10 py-[16px] font-breit font-medium text-[20px] leading-[1em] text-surface-base no-underline cursor-pointer transition-opacity duration-150 ease-out box-border hover:opacity-[0.85] hover:no-underline";
 
 const footerLink =
 	"font-breit font-normal text-[12px] leading-[1.1667em] text-secondary underline transition-colors duration-[125ms] ease-out hover:text-primary";
@@ -118,22 +118,22 @@ export default function Homepage() {
 					</h1>
 				</div>
 
-				<div className="flex items-stretch w-full">
+				<div className="flex items-stretch w-full max-md:flex-col max-md:gap-8">
 					<Link
 						href="https://build.withfabric.xyz/login"
-						className={`${ctaBase} bg-primary rounded-l-xs`}
+						className={`${ctaBase} bg-primary max-md:rounded-xs md:rounded-l-xs`}
 					>
 						Get Started
 					</Link>
 					<Link
 						href="https://docs.withfabric.xyz"
-						className={`${ctaBase} bg-primary/75`}
+						className={`${ctaBase} bg-primary/75 max-md:rounded-xs`}
 					>
 						Docs
 					</Link>
 					<Link
 						href="https://benchmark.withfabric.xyz/"
-						className={`${ctaBase} bg-primary/50 rounded-r-xs`}
+						className={`${ctaBase} bg-primary/50 max-md:rounded-xs md:rounded-r-xs`}
 					>
 						Benchmarks
 					</Link>
