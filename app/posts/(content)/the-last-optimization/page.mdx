@@ -1,0 +1,90 @@
+---
+title: "Price Is the Last Thing You Should Optimize For"
+headerImage: /images/the-last-optimization_wallpaper.jpg
+headerImageTitle: "The Courtyard of the Amsterdam Stock Exchange, Emanuel de Witte - 1653"
+thumbnail: /images/the-last-optimization_thumb.jpg
+date: 2026-07-15
+---
+
+import Image from "next/image";
+
+# Price Is the Last Thing You Should Optimize For
+
+<p className="date">Jul 15, 2026</p>
+
+A strong marketing strategy is built around the most legible metric. And in many cases it directly drives growth and revenue. But what happens when that metric drifts away from real value to the user?
+
+For professionals, price only enters the conversation after every other critical question has been answered. The same standard should apply for those choosing which aggregator to integrate.
+
+<hr />
+
+## What Immature Markets Optimize For
+
+Markets gravitate towards any metric buyers reward, even if it is loosely connected with an outcome. As it starts to effect conversion, more pressure accumulates to optimize for it.
+
+For aggregators, that metric is price.
+
+How many tokens are returned for a given input? This number is ubiquitously quoted, compared, and lauded as if it were the only relevant figure.
+
+It is also not the truth:
+
+- How often do transactions fail?
+- How quickly can a quote be provided?
+- How many tokens does the user actually receive?
+- How long until users notice price isn't everything?
+
+Other critical aspects of a trade always come before price. Ignoring that fact will not hide it indefinitely.
+
+## Users Buy Quotes, Integrators Buy Execution
+
+There is an obvious difference between how a user and an integrator perceive an aggregator.
+
+Users are looking to get a quote, swap, and move on. They probably don't know or care which aggregator facilitated the trade. Integrators, on the other hand are looking for infrastructure that *should* provide their users with best-in-class trades.
+
+Consider the first time experience:
+
+A user goes to swap. They compare quotes. They cannot see quote provider's failure rates, measure latency over time, or track the gap between quoted and executed output. They only see 1,000 USDC versus 997, and most will select 1,000 without questioning the quote's quality.
+
+But the moment something breaks, price goes out the window:
+
+- Why can't I swap?
+- Why is it taking so long?
+- Am I about to double-submit?
+- Did my transaction go through?
+- Why did I receive less than I saw?
+
+How will mounting support issues be addressed for end users? Should they just accept best price at the cost of everything else?
+
+Integrators evaluate systems differently. Over time, they gain visibility into the full picture. If quote reliability, speed, or accuracy are sacrificed at the behest of pricing, it will show.
+
+And if inconsistencies are visible internally, your users eventually feel them externally.
+
+<Image src="/images/the-last-optimization_01.jpg" alt="" width={520} height={260} title="Benchmark Data" style={{ margin: '20px 0 0 0' }} />
+
+<p style={{ marginTop: '20px' }}><a href="https://benchmark.withfabric.xyz/" target="_blank" rel="noopener noreferrer">Quotebench</a>, Fabric's public benchmarking tool, tracks performance continuously in a way users cannot normally observe. Aggregators leading on price while demonstrating poor stability, latency, or accuracy are visible in ways a quote comparison table hides.</p>
+
+Will your product hold up to scrutiny? Pursuing best price above all else degrades the performance characteristics it truly relies on, which is exactly why price should be the last optimization.
+
+<Image src="/images/the-last-optimization_02.jpg" alt="" width={520} height={416} title="SLAP Pyramid" style={{ marginBottom: 0 }} />
+
+<h2 style={{ marginTop: '20px' }}>Why Price Is Last</h2>
+
+The placement of Price in SLAP is deliberate. It is the fourth and final dimension after Stability, Latency and Accuracy, measured by output tokens relative to input tokens, ranked among other providers for the same swap.
+
+Competitive pricing is a genuine user benefit, and Fabric's aggregator is built to deliver. Despite this, price is only a legitimate metric after all three prior conditions have been satisfied:
+
+- A quote that never arrives has no price.
+- A quote that arrives too late for the user has no price.
+- A quote that overstates expected execution has a fictional price.
+
+Price only becomes real when:
+
+- Stability has confirmed the quote exists.
+- Latency has confirmed it arrived in time to act upon.
+- Accuracy has confirmed it honestly predicts what will be delivered.
+
+With the first three conditions met, price then has full freedom to compete on its merits. Eventually, the market will reward best experience, and aggregators who endure will be built to a new standard.
+
+<hr />
+
+<p className="attribution">Fabric operates the <a href="https://withfabric.xyz/" target="_blank" rel="noopener noreferrer">Fabric Aggregator</a> and <a href="https://spandex.sh/" target="_blank" rel="noopener noreferrer">spanDEX</a>, an open-source meta-aggregator library. <a href="https://benchmark.withfabric.xyz/" target="_blank" rel="noopener noreferrer">Quotebench</a>, Fabric's public benchmarking tool, tracks aggregator performance across Stability, Latency, Accuracy, and Price, continuously, in real time.</p>
