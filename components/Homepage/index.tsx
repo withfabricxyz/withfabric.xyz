@@ -147,7 +147,7 @@ export default function Homepage() {
 							className="font-breit font-semibold text-[40px] leading-[1em] text-primary"
 							style={{ fontFeatureSettings: '"calt" 0' }}
 						>
-							250M+
+							1B+
 						</span>
 						<span
 							className="font-breit font-normal text-[12px] leading-[1.1667em] text-secondary"
@@ -161,7 +161,7 @@ export default function Homepage() {
 							className="font-breit font-semibold text-[40px] leading-[1em] text-primary"
 							style={{ fontFeatureSettings: '"calt" 0' }}
 						>
-							$175M+
+							$200M+
 						</span>
 						<span
 							className="font-breit font-normal text-[12px] leading-[1.1667em] text-secondary"
