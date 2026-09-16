@@ -1,13 +1,10 @@
 import Link from "next/link";
-import { connection } from "next/server";
-import { Suspense } from "react";
 import Spark from "../Spark";
 import { MarketNetwork } from "./MarketNetwork";
 import Marquee from "./Marquee";
 import {
 	type HomepageMetric,
 	MetricsGrid,
-	MetricsGridSkeleton,
 } from "./PerformanceMetricsGrid";
 
 const ctaBase =
@@ -19,92 +16,12 @@ const footerLink =
 const logoLink =
 	"text-secondary transition-colors duration-[125ms] ease-out hover:text-primary no-underline [&>svg]:max-md:[zoom:0.8]";
 
-type PublicStats24hResponse = {
-	window: "24h";
-	asOf: string;
-	from: string;
-	to: string;
-	sampleSize: number;
-	metrics: {
-		stability: number | null;
-		latency: number | null;
-		accuracy: number | null;
-		price: number | null;
-	};
-};
-
-const placeholderMetrics: HomepageMetric[] = [
-	{ label: "Stability", value: "-" },
-	{ label: "Latency", value: "-" },
-	{ label: "Accuracy", value: "-" },
-	{ label: "Price", value: "-" },
+const metrics: HomepageMetric[] = [
+	{ label: "Stability", value: "100%" },
+	{ label: "Latency", value: "25ms" },
+	{ label: "Accuracy", value: "0.5bps" },
+	{ label: "Price", value: "27bps" },
 ];
-
-function isPublicStats24hResponse(
-	data: unknown,
-): data is PublicStats24hResponse {
-	if (!data || typeof data !== "object") return false;
-
-	const candidate = data as Partial<PublicStats24hResponse>;
-	const metrics = candidate.metrics;
-	if (candidate.window !== "24h" || !metrics) return false;
-
-	return ["stability", "latency", "accuracy", "price"].every((key) => {
-		const metric = metrics[key as keyof PublicStats24hResponse["metrics"]];
-		return metric === null || typeof metric === "number";
-	});
-}
-
-async function getPerformanceMetrics(): Promise<HomepageMetric[]> {
-	const url = process.env.QUOTEBENCH_STATS_URL;
-	if (!url) return placeholderMetrics;
-
-	try {
-		const res = await fetch(url, {
-			...(process.env.NODE_ENV === "development"
-				? { cache: "no-store" as const }
-				: { next: { revalidate: 300 } }),
-			signal: AbortSignal.timeout(3000),
-		});
-
-		if (!res.ok) return placeholderMetrics;
-
-		const data = await res.json();
-
-		if (!isPublicStats24hResponse(data)) return placeholderMetrics;
-
-		const { stability, latency, accuracy, price } = data.metrics;
-
-		return [
-			{
-				label: "Stability",
-				value: stability === null ? "-" : `${(stability * 100).toFixed(2)}%`,
-			},
-			{
-				label: "Latency",
-				value: latency === null ? "-" : `${latency.toFixed(1)}ms`,
-			},
-			{
-				label: "Accuracy",
-				value: accuracy === null ? "-" : `${Math.abs(accuracy).toFixed(3)}bps`,
-			},
-			{
-				label: "Price",
-				value: price === null ? "-" : `${price.toFixed(3)}bps`,
-			},
-		];
-	} catch {
-		return placeholderMetrics;
-	}
-}
-
-async function PerformanceMetrics() {
-	// Opt this subtree out of prerendering so the fetch runs at request
-	// time and streams in behind the Suspense fallback.
-	await connection();
-	const metrics = await getPerformanceMetrics();
-	return <MetricsGrid metrics={metrics} />;
-}
 
 export default function Homepage() {
 	return (
@@ -178,9 +95,7 @@ export default function Homepage() {
 					<span className="font-breit font-normal text-[12px] leading-[1.1667em] text-secondary">
 						24hr Average Performance—
 					</span>
-					<Suspense fallback={<MetricsGridSkeleton />}>
-						<PerformanceMetrics />
-					</Suspense>
+					<MetricsGrid metrics={metrics} />
 				</section>
 
 				<hr className="w-full m-0 border-0 border-t border-primary" />
